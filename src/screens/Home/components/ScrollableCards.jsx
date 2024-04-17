@@ -17,6 +17,7 @@ export function ScrollableCards({ cardsList }) {
         />}
       keyExtractor={card => card.title} 
       horizontal={true}
+      showsHorizontalScrollIndicator={false}
       style={styles.scrollViewContent} />
   );
 }
@@ -30,6 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor: mainColor,
   },
   scrollViewContent: {
-    paddingEnd: 8,
+    paddingEnd: 16,
+    marginBottom: 15
   },
 });

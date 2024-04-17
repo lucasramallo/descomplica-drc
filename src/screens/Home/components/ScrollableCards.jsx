@@ -2,12 +2,9 @@
 import React from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { mainColor } from '../../../../assets/constants/colors';
+import Card from './Card';
+import rim from '../../../../assets/img/rins.png'
 
-const Card = ({ index }) => (
-  <TouchableOpacity style={styles.card}>
-    {}
-  </TouchableOpacity>
-);
 
 export function ScrollableCards() {
   return (
@@ -16,9 +13,17 @@ export function ScrollableCards() {
       contentContainerStyle={styles.scrollViewContent}
       showsHorizontalScrollIndicator={false}
     >
-      {[...Array(6)].map((_, index) => (
-        <Card key={index} index={index} />
-      ))}
+      <Card 
+        title="Definição" 
+        description="É caracterizada por anormalidades na estrutura e/ou função renal que..." 
+        img={rim}
+      />
+
+      <Card 
+        title="Definição" 
+        description="É caracterizada por anormalidades na estrutura e/ou função renal que..." 
+        img={rim}
+      />
     </ScrollView>
   );
 }

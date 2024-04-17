@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { mainColor } from '../../../assets/constants/colors'
+import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors'
 import { paddingContainer } from '../../../assets/constants/constants'
 import { ScrollableCards } from './components/ScrollableCards';
 
@@ -15,7 +15,7 @@ export default function Hypertension() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: backgroundColor,
     paddingLeft: paddingContainer,
   },
   text: {

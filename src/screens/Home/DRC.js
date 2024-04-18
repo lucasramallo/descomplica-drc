@@ -2,29 +2,35 @@ import { ScrollView, Text, StyleSheet } from 'react-native';
 import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors'
 import { paddingContainer } from '../../../assets/constants/constants'
 import { ScrollableCards } from './components/ScrollableCards';
-import rim from '../../../assets/img/rins.png';
+import kidney from '../../../assets/img/kidney.png';
+import classification from '../../../assets/img/classification.png';
+import diagnosis from '../../../assets/img/diagnosis.png';
 import diabetes from '../../../assets/img/diabetes.png';
-import hipertensao from '../../../assets/img/hipertensao.png';
+import hypertension from '../../../assets/img/hypertension.png';
 import dna from '../../../assets/img/dna.png';
-import idade from '../../../assets/img/idade.png';
-import medicamentos from '../../../assets/img/medicamento.png';
+import age from '../../../assets/img/age.png';
+import medicines from '../../../assets/img/medicines.png';
+import exercise from '../../../assets/img/exercise.png';
+import forbiddenFat from '../../../assets/img/forbidden-fat.png';
+import scales from '../../../assets/img/scales.png';
+import forbiddenAlcoholCigarettes from '../../../assets/img/forbidden-alcohol-cigarettes.png';
 
 export default function DRC() {
   const cardsList1 = [
     {
       title: "Descrição",
       description: "É caracterizada por anormalidades na estrutura e/ou função renal que...",
-      img: rim
+      img: kidney
     },
     {
       title: "Classificação",
       description: "Os rins tem um bom funcionamento, porém já apresenta lesão moderada com...",
-      img: rim
+      img: classification
     },
     {
       title: "Diagnóstico",
       description: "O diagnóstico precoce da DRC pode ser realizado por meio de exames...",
-      img: rim
+      img: diagnosis
     }
   ];
   const cardsList2 = [
@@ -36,7 +42,7 @@ export default function DRC() {
     {
       title: "Hipertensão",
       description: "Pessoas com hipertensão (pressão alta).",
-      img: hipertensao
+      img: hypertension
     },
     {
       title: "Hereditariedade",
@@ -46,19 +52,44 @@ export default function DRC() {
     {
       title: "Idade",
       description: "Pessoas com idade superior a 60 anos.",
-      img: idade
+      img: age
     },
     {
       title: "Medicamentos",
       description: "Uso abusivo  de medicamentos que agridem os rins.",
-      img: medicamentos
+      img: medicines
     },
   ];
   const cardsList3 = [
     {
-      title: "Descrição",
-      description: "É caracterizada por anormalidades na estrutura e/ou função renal que...",
-      img: rim
+      title: "Número 1",
+      description: "Praticar atividade física.",
+      img: exercise
+    },
+    {
+      title: "Número 2",
+      description: "Evitar o consumo abusivo de gorduras.",
+      img: forbiddenFat
+    },
+    {
+      title: "Número 3",
+      description: "Controlar o peso.",
+      img: scales
+    },
+    {
+      title: "Número 4",
+      description: "Evitar o uso de cigarro e bebidas alcoólicas.",
+      img: forbiddenAlcoholCigarettes
+    },
+    {
+      title: "Número 5",
+      description: "Controlar a diabetes (açúcar no sangue).",
+      img: diabetes
+    },
+    {
+      title: "Número 6",
+      description: "Controlar a hipertensão (pressão alta)",
+      img: hypertension
     }
   ];
   

@@ -2,14 +2,14 @@ import { View, Text, StyleSheet } from 'react-native';
 import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors'
 import { paddingContainer } from '../../../assets/constants/constants'
 import { ScrollableCards } from './components/ScrollableCards';
-import rim from '../../../assets/img/rins.png';
+import kidney from '../../../assets/img/kidney.png';
 
 export default function Hypertension() {
   const cardsList = [
     {
       title: "Descrição",
       description: "É caracterizada por anormalidades na estrutura e/ou função renal que...",
-      img: rim
+      img: kidney
     },
   ];
   

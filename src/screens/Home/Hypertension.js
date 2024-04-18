@@ -31,7 +31,7 @@ export default function Hypertension() {
         <Text style={styles.text}>Prevenção</Text>
         <Menu />
 
-        <MessageCard />
+        <MessageCard message="A saúde é a riqueza mais valiosa, cuide dela como o seu maior tesouro." />
       </ScrollView>
     </>
   );

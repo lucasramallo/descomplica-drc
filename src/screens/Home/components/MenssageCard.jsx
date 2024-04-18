@@ -9,7 +9,7 @@ export default function MessageCard({ message }) {
       <View style={styles.card}>
         <View style={styles.content}>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>"A saúde é a riqueza mais valiosa, cuide dela como o seu maior tesouro.”</Text>
+            <Text style={styles.text}>{message}</Text>
           </View>
           <Image style={styles.img} source={img} />
         </View>

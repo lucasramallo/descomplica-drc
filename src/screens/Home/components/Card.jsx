@@ -38,9 +38,9 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Inter_800ExtraBold',
-    fontSize: 24,
+    fontSize: 26,
     color: '#fff',
-    marginBottom: 5
+    marginBottom: 5,
   },
   description: {
     fontFamily: 'Inter_400Regular',
@@ -51,6 +51,6 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
     borderRadius: 8,
-    marginLeft: -6
+    marginLeft: -3
   }
 });

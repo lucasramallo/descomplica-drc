@@ -5,17 +5,17 @@ import bebida from '../../../../assets/img/menu/bebida-alcoolica.png'
 import controle from '../../../../assets/img/menu/controle-de-peso.png'
 import dieta from '../../../../assets/img/menu/dieta.png'
 import estresse from '../../../../assets/img/menu/estresse.png'
-import pulmoes from '../../../../assets/img/menu/pulmoes.png'
+import exercicio from '../../../../assets/img/menu/pulmoes.png'
 import tabagismo from '../../../../assets/img/menu/tabagismo.png'
 
 
 export default function Menu() {
   const data = [
-    { id: '1', image: bebida },
-    { id: '2', image: controle },
-    { id: '3', image: dieta },
-    { id: '4', image: estresse },
-    { id: '5', image: pulmoes },
+    { id: '1', image: controle },
+    { id: '2', image: dieta },
+    { id: '3', image: estresse },
+    { id: '4', image: exercicio },
+    { id: '5', image: bebida },
     { id: '6', image: tabagismo },
   ];
 

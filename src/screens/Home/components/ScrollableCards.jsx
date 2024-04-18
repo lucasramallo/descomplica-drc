@@ -17,6 +17,7 @@ export function ScrollableCards({ cardsList }) {
         />}
       keyExtractor={card => card.title} 
       horizontal={true}
+      showsHorizontalScrollIndicator={false}
       style={styles.scrollViewContent} />
   );
 }

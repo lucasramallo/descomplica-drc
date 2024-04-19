@@ -12,13 +12,13 @@ export default function Hypertension() {
   return (
     <>
       <ScrollView style={styles.container}>
-        <Text style={styles.welcomeText}>Entenda sobre Hipertensão Arterial</Text>
+        <Text style={styles.title}>Entenda sobre Hipertensão Arterial</Text>
         <View style={styles.cardView}>
           <TouchableOpacity style={styles.card}>
             <View style={styles.content}>
               <Image style={styles.img} source={heartIcon} />
               <View style={styles.textContainer}>
-                <Text style={styles.title}>{"Definição"}</Text>
+                <Text style={styles.cardTitle}>{"Definição"}</Text>
                 <Text style={styles.description}>{"O que é Hipertensão Arterial?"}</Text>
               </View>
             </View>
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     backgroundColor: backgroundColor,
     paddingLeft: paddingContainer,
   },
-  welcomeText: {
+  title: {
     fontFamily: 'Inter_600SemiBold',
     fontSize: 23,
     marginBottom: 25,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   textContainer: {
     flex: 1,
   },
-  title: {
+  cardTitle: {
     fontFamily: 'Inter_600SemiBold',
     fontSize: 20,
     color: '#fff',

@@ -8,7 +8,7 @@ import { cardsList1, cardsList2, cardsList3 } from '../Home/data/DRCCardsData'
 export default function DRC() {
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.welcomeText}>Entenda sobre doença renal crônica</Text>
+      <Text style={styles.title}>Entenda sobre doença renal crônica</Text>
       <Text style={styles.text}>Entenda</Text>
       <ScrollableCards cardsList={cardsList1} />
       <Text style={styles.text}>Fatores de risco</Text>
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     paddingLeft: paddingContainer,
     paddingBottom: paddingContainer
   },
-  welcomeText: {
+  title: {
     fontFamily: 'Inter_600SemiBold',
     fontSize: 23,
     marginTop: 15,

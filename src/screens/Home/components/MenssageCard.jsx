@@ -21,6 +21,7 @@ export default function MessageCard({ message }) {
 const styles = StyleSheet.create({
   container: {
     paddingRight: paddingContainer,
+    marginTop: 30
   },
   card: {
     alignItems: 'center',

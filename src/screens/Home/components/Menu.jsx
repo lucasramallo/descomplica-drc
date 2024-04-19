@@ -5,7 +5,7 @@ import bebida from '../../../../assets/img/menu/bebida-alcoolica.png'
 import controle from '../../../../assets/img/menu/controle-de-peso.png'
 import dieta from '../../../../assets/img/menu/dieta.png'
 import estresse from '../../../../assets/img/menu/estresse.png'
-import exercicio from '../../../../assets/img/menu/pulmoes.png'
+import exercicio from '../../../../assets/img/menu/exercicio.png'
 import tabagismo from '../../../../assets/img/menu/tabagismo.png'
 
 
@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
     marginRight: paddingContainer,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 30
   },
   card: {
     width: 95,

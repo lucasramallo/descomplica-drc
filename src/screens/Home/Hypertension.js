@@ -12,7 +12,7 @@ export default function Hypertension() {
   return (
     <>
       <ScrollView style={styles.container}>
-        <Text style={styles.welcomeText}>Bem-vindo!</Text>
+        <Text style={styles.welcomeText}>Entenda sobre Hipertensão Arterial</Text>
         <View style={styles.cardView}>
           <TouchableOpacity style={styles.card}>
             <View style={styles.content}>
@@ -44,9 +44,10 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontFamily: 'Inter_600SemiBold',
-    fontSize: 26,
+    fontSize: 23,
     marginBottom: 25,
-    marginTop: 15
+    marginTop: 15,
+    color: '#4D4D56'
   },
   text: {
     fontFamily: 'Inter_500Medium',

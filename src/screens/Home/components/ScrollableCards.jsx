@@ -1,10 +1,7 @@
-// ScrollableCards.js
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, FlatList, Text } from 'react-native';
 import { mainColor } from '../../../../assets/constants/colors';
 import Card from './Card';
-import rim from '../../../../assets/img/rins.png'
-
 
 export function ScrollableCards({ cardsList }) {
   return (

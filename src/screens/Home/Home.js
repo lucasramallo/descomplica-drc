@@ -15,11 +15,12 @@ export default function Home() {
           tabBarIndicatorStyle: { backgroundColor: backgroundColor, height: '80%', width: '45%', margin: 6, borderRadius: 50, marginLeft: 8 },
           tabBarActiveTintColor: secondColor,
           tabBarInactiveTintColor: secondColor,
-          tabBarStyle: { backgroundColor: '#fff', marginTop: 50, marginHorizontal: 30, marginBottom: 30, borderRadius: 50, padding: 2, shadowColor: '#fff'},
+          tabBarStyle: { backgroundColor: '#fff', marginTop: 50, marginHorizontal: 30, marginBottom: 5, borderRadius: 50, padding: 2, shadowColor: '#fff' },
           tabBarPressColor: 'transparent',
+          swipeEnabled: false
         }}>
-        <Tab.Screen name="DRC" component={DRC} />
         <Tab.Screen name="Hipertensão" component={Hypertension} />
+        <Tab.Screen name="DRC" component={DRC} />
       </Tab.Navigator>
     </SafeAreaView>
   );

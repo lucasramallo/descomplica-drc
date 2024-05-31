@@ -1,30 +1,21 @@
-// ScrollableCards.js
 import React from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, FlatList, Text } from 'react-native';
 import { mainColor } from '../../../../assets/constants/colors';
 import Card from './Card';
-import rim from '../../../../assets/img/rins.png'
 
-
-export function ScrollableCards() {
+export function ScrollableCards({ cardsList }) {
   return (
-    <ScrollView
+    <FlatList 
+      data={cardsList}
+      renderItem={({ item }) => <Card
+        title={item.title} 
+        description={item.description}
+        img={item.img}
+        />}
+      keyExtractor={card => card.title} 
       horizontal={true}
-      contentContainerStyle={styles.scrollViewContent}
       showsHorizontalScrollIndicator={false}
-    >
-      <Card 
-        title="Definição" 
-        description="É caracterizada por anormalidades na estrutura e/ou função renal que..." 
-        img={rim}
-      />
-
-      <Card 
-        title="Definição" 
-        description="É caracterizada por anormalidades na estrutura e/ou função renal que..." 
-        img={rim}
-      />
-    </ScrollView>
+      style={styles.scrollViewContent} />
   );
 }
 

@@ -8,12 +8,11 @@ import { cardsList1, cardsList2, cardsList3 } from '../Home/data/DRCCardsData'
 export default function DRC() {
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Entenda sobre doença renal crônica</Text>
-      <Text style={styles.text}>Entenda</Text>
+      <Text style={styles.title}>Entenda sobre Doença Renal Crônica</Text>
       <ScrollableCards cardsList={cardsList1} />
-      <Text style={styles.text}>Fatores de risco</Text>
+      <Text style={[styles.text,{fontWeight: 'bold'}]}>Fatores de risco</Text>
       <ScrollableCards cardsList={cardsList2} />
-      <Text style={styles.text}>Prevenção</Text>
+      <Text style={[styles.text,{fontWeight: 'bold'}]}>Prevenção</Text>
       <ScrollableCards cardsList={cardsList3} />
 
       <MessageCard message="A saúde é a riqueza mais valiosa, cuide dela como o seu maior tesouro." />
@@ -29,8 +28,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Inter_600SemiBold',
+    fontWeight: 'bold',
     fontSize: 23,
     marginTop: 15,
+    marginBottom: 25,
     paddingRight: paddingContainer,
     color: '#4D4D56'
   },

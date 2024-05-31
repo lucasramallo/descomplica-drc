@@ -15,37 +15,42 @@ export const cardsList = [
   },
   {
     title: "Idade",
-    description: "Com o envelhecimento, a Pressão Arterial Sistólica (PAS) torna-se...",
+    description: "Com o envelhecimento, a Pressão...",
     img: idadeImage
   },
   {
     title: "Sexo",
-    description: "Nos mais jovens, a pressão arterial é mais elevada entre os homens...",
+    description: "Nos mais jovens, a pressão arterial é...",
     img: sexoImage
   },
   {
     title: "Raça",
-    description: "A etnia negra tem um risco maior de desenvolver hipertensão.",
+    description: "A etnia negra tem um risco...",
     img: racaImage
   },
   {
     title: "Obesidade",
-    description: "O ganho de apenas 20% sobre o peso normal pode aumentar em até...",
+    description: "O ganho de apenas 20% sobre o peso...",
     img: obesidadeImage
   },
   {
     title: "Ingestão de sódio",
-    description: "A ingestão elevada de sódio pode aumentar a pressão arterial...",
+    description: "A ingestão elevada de sódio pode aumentar...",
     img: sodioImage
   },
   {
     title: "Álcool",
-    description: "Aquelas pessoas que ingerem seis ou mais doses ao dia de álcool tem mais risco de...",
+    description: "Aquelas pessoas que ingerem...",
     img: alcoolImage
   },
   {
     title: "Fatores socio-econômicos",
     description: "Entre os fatores, podemos...",
+    img: socioeconomicolImage
+  },
+  {
+    title: "Sedentarismo",
+    description: "O indivíduo que não pratica atividade...",
     img: socioeconomicolImage
   }
 ];

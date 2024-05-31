@@ -13,18 +13,18 @@ import forbiddenAlcoholCigarettes from '../../../../assets/img/forbidden-alcohol
 
 export const cardsList1 = [
   {
-    title: "Descrição",
-    description: "É caracterizada por anormalidades na estrutura e/ou função renal que...",
+    title: "Definição",
+    description: "",
     img: kidney
   },
   {
     title: "Classificação",
-    description: "Os rins tem um bom funcionamento, porém já apresenta lesão moderada com...",
+    description: "",
     img: classification
   },
   {
     title: "Diagnóstico",
-    description: "O diagnóstico precoce da DRC pode ser realizado por meio de exames...",
+    description: "",
     img: diagnosis
   }
 ];
@@ -59,33 +59,33 @@ export const cardsList2 = [
 
 export const cardsList3 = [
   {
-    title: "Número 1",
-    description: "Praticar atividade física.",
+    title: "",
+    description: "Pratique atividade física.",
     img: exercise
   },
   {
-    title: "Número 2",
-    description: "Evitar o consumo abusivo de gorduras.",
+    title: "",
+    description: "Evite o consumo abusivo de gorduras.",
     img: forbiddenFat
   },
   {
-    title: "Número 3",
-    description: "Controlar o peso.",
+    title: "",
+    description: "Controle o peso.",
     img: scales
   },
   {
-    title: "Número 4",
-    description: "Evitar o uso de cigarro e bebidas alcoólicas.",
+    title: "",
+    description: "Evite o uso de cigarro e bebidas alcoólicas.",
     img: forbiddenAlcoholCigarettes
   },
   {
-    title: "Número 5",
-    description: "Controlar a diabetes (açúcar no sangue).",
+    title: "",
+    description: "Controle a diabetes (açúcar no sangue).",
     img: diabetes
   },
   {
-    title: "Número 6",
-    description: "Controlar a hipertensão (pressão alta)",
+    title: "",
+    description: "Controle a hipertensão (pressão alta)",
     img: hypertension
   }
 ];

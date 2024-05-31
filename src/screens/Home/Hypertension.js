@@ -25,10 +25,10 @@ export default function Hypertension() {
           </TouchableOpacity>
         </View>
         
-        <Text style={styles.text}>Fatores de risco</Text>
+        <Text style={[styles.text, {fontWeight: 'bold'}]}>Fatores de risco</Text>
         <ScrollableCards cardsList={cardsList} />
 
-        <Text style={styles.text}>Prevenção</Text>
+        <Text style={[styles.text, {fontWeight: 'bold'}]}>Prevenção</Text>
         <Menu />
 
         <MessageCard message="A saúde é a riqueza mais valiosa, cuide dela como o seu maior tesouro." />
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Inter_600SemiBold',
+    fontWeight: 'bold',
     fontSize: 23,
     marginBottom: 25,
     marginTop: 15,

@@ -7,6 +7,7 @@ import Menu from './components/Menu';
 import MessageCard from './components/MenssageCard';
 
 import { cardsList } from '../Home/data/HypertensionCardsData'
+import Content from './components/Content';
 
 export default function Hypertension() {
   return (

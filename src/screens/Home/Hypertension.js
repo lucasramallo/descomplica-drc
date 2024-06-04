@@ -1,16 +1,19 @@
+// REMOVER
+import { useRef } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors'
-import { paddingContainer } from '../../../assets/constants/constants'
+import { paddingContainer } from '../../../assets/constants/constants';
 import { ScrollableCards } from './components/ScrollableCards';
 import heartIcon from '../../../assets/img/heatIcon.png'
 import Menu from './components/Menu';
 import MessageCard from './components/MenssageCard';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { cardsList } from '../Home/data/HypertensionCardsData'
 
 export default function Hypertension() {
   return (
-    <>
+    <GestureHandlerRootView style={{ flex: 1}}>
       <ScrollView style={styles.container}>
         <Text style={styles.title}>Entenda sobre Hipertensão Arterial</Text>
         <View style={styles.cardView}>
@@ -33,7 +36,7 @@ export default function Hypertension() {
 
         <MessageCard message="A saúde é a riqueza mais valiosa, cuide dela como o seu maior tesouro." />
       </ScrollView>
-    </>
+    </GestureHandlerRootView>
   );
 };
 

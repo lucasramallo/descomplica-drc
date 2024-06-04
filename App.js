@@ -2,6 +2,7 @@ import Home from './src/screens/Home/Home'
 import { NavigationContainer } from '@react-navigation/native';
 import {  useFonts, Inter_700Bold, Inter_500Medium, Inter_600SemiBold, Inter_800ExtraBold, Inter_400Regular } from '@expo-google-fonts/inter';
 import { Epilogue_400Regular } from '@expo-google-fonts/epilogue';
+import Router from './src/screens/routes/Router';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -19,7 +20,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Home />
+      <Router />
     </NavigationContainer>
   );
 }

@@ -11,16 +11,19 @@ import forbiddenFat from '../../../../assets/img/forbidden-fat.png';
 import scales from '../../../../assets/img/scales.png';
 import forbiddenAlcoholCigarettes from '../../../../assets/img/forbidden-alcohol-cigarettes.png';
 
-export const cardsList1 = [
+export const cardsList1 = ( navigation ) => [
   {
     title: "Definição",
     description: "",
-    img: kidney
+    img: kidney,
   },
   {
     title: "Classificação",
     description: "",
-    img: classification
+    img: classification,
+    onPress: () => { 
+      navigation.navigate("Classification")
+    }
   },
   {
     title: "Diagnóstico",

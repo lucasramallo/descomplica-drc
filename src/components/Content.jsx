@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
     color: "#121D29",
     fontFamily: "Inter_500Medium",
     fontSize: 20,
-    marginBottom: 10
   },
   content: {
     color: "#2A343F",

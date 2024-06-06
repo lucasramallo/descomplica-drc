@@ -11,7 +11,8 @@ export function ScrollableCards({ cardsList }) {
         title={item.title} 
         description={item.description}
         img={item.img}
-        />}
+        onPress={item.onPress}
+      />}
       keyExtractor={card => card.title} 
       horizontal={true}
       showsHorizontalScrollIndicator={false}

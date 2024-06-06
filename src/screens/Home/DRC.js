@@ -4,12 +4,15 @@ import { paddingContainer } from '../../../assets/constants/constants'
 import { ScrollableCards } from './components/ScrollableCards';
 import MessageCard from './components/MenssageCard';
 import { cardsList1, cardsList2, cardsList3 } from '../Home/data/DRCCardsData'
+import { useNavigation } from '@react-navigation/native';
 
 export default function DRC() {
+  const navigation = useNavigation();
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Entenda sobre Doença Renal Crônica</Text>
-      <ScrollableCards cardsList={cardsList1} />
+      <ScrollableCards cardsList={cardsList1(navigation)} />
       <Text style={[styles.text,{fontWeight: 'bold'}]}>Fatores de risco</Text>
       <ScrollableCards cardsList={cardsList2} />
       <Text style={[styles.text,{fontWeight: 'bold'}]}>Prevenção</Text>

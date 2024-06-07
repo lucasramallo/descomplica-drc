@@ -2,7 +2,17 @@ import React from 'react';
 import { StyleSheet, FlatList } from 'react-native';
 import Card from './Card';
 
-export function ScrollableCards({ cardsListData, onCardPress }) {
+export function ScrollableCards({ cardsListData, modalHandler }) {
+  function onPressHandler(item) {
+    if(modalHandler) {
+      //se for para abrir um modal, chama o modalHandler
+      return () => modalHandler(item.modalTitle, item.modalSubtitle, item.modalDescription)
+    }
+
+    //se for para navegar para um tela, chama o onPress passado no Data
+    return item.onPress
+  }
+
   return (
     <FlatList
       data={cardsListData}
@@ -11,7 +21,7 @@ export function ScrollableCards({ cardsListData, onCardPress }) {
           title={item.cardTitle}
           description={item.cardDescription}
           img={item.cardImg}
-          onPress={() => onCardPress(item.modalTitle, item.modalSubtitle, item.modalDescription)}
+          onPress={onPressHandler(item)}
         />
       )}
       keyExtractor={card => card.description}
@@ -27,54 +37,3 @@ const styles = StyleSheet.create({
     paddingEnd: 8,
   },
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import { View, StyleSheet, TouchableOpacity, FlatList, Text } from 'react-native';
-// import { mainColor } from '../../../../assets/constants/colors';
-// import Card from './Card';
-
-// export function ScrollableCards({ cardsList }) {
-//   return (
-//     <FlatList 
-//       data={cardsList}
-//       renderItem={({ item }) => <Card
-//         title={item.title} 
-//         description={item.description}
-//         img={item.img}
-//         onPress={item.action}
-//       />}
-//       keyExtractor={card => card.title} 
-//       horizontal={true}
-//       showsHorizontalScrollIndicator={false}
-//       style={styles.scrollViewContent} />
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   card: {
-//     width: 310,
-//     height: 150,
-//     marginEnd: 8,
-//     borderRadius: 8,
-//     backgroundColor: mainColor,
-//   },
-//   scrollViewContent: {
-//     paddingEnd: 8,
-//   },
-// });

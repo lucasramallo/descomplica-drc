@@ -15,7 +15,7 @@ export default function Hypertension() {
   const modalizeRef = useRef(null);
   const [modalContent, setModalContent] = useState({ title: '', subtitle: '', content: '' });
 
-  const handleCardPress = (title, subtitle, content) => {
+  const modalHandler = (title, subtitle, content) => {
     setModalContent({ title, subtitle, content });
     modalizeRef.current?.open();
   };
@@ -37,7 +37,7 @@ export default function Hypertension() {
         </View>
         
         <Text style={[styles.text, {fontWeight: 'bold'}]}>Fatores de risco</Text>
-        <ScrollableCards cardsListData={cardsList} onCardPress={handleCardPress} />
+        <ScrollableCards cardsListData={cardsList} modalHandler={modalHandler} />
 
         <Text style={[styles.text, {fontWeight: 'bold'}]}>Prevenção</Text>
         <Menu />

@@ -13,82 +13,81 @@ import forbiddenAlcoholCigarettes from '../../../../assets/img/forbidden-alcohol
 
 export const cardsList1 = ( navigation ) => [
   {
-    title: "Definição",
-    description: "",
-    img: kidney,
+    cardTitle: "Definição",
+    cardDescription: "",
+    cardImg: kidney,
   },
   {
-    title: "Classificação",
-    description: "",
-    img: classification,
-    onPress: () => { 
-      navigation.navigate("Classification")
-    }
+    cardTitle: "Classificação",
+    cardDescription: "",
+    cardImg: classification,
+    onPress: () => navigation.navigate("Classification")
+    
   },
   {
-    title: "Diagnóstico",
-    description: "",
-    img: diagnosis
+    cardTitle: "Diagnóstico",
+    cardDescription: "",
+    cardImg: diagnosis
   }
 ];
 
 export const cardsList2 = [
   {
-    title: "Diabetes",
-    description: "Pessoas com diabetes (quer seja do tipo 1 ou do tipo 2).",
-    img: diabetes
+    cardTitle: "Diabetes",
+    cardDescription: "Pessoas com diabetes (quer seja do tipo 1 ou do tipo 2).",
+    cardImg: diabetes
   },
   {
-    title: "Hipertensão",
-    description: "Pessoas com hipertensão (pressão alta).",
-    img: hypertension
+    cardTitle: "Hipertensão",
+    cardDescription: "Pessoas com hipertensão (pressão alta).",
+    cardImg: hypertension
   },
   {
-    title: "Hereditariedade",
-    description: "Pessoas com história familiar de doença renal crônica.",
-    img: dna
+    cardTitle: "Hereditariedade",
+    cardDescription: "Pessoas com história familiar de doença renal crônica.",
+    cardImg: dna
   },
   {
-    title: "Idade",
-    description: "Pessoas com idade superior a 60 anos.",
-    img: age
+    cardTitle: "Idade",
+    cardDescription: "Pessoas com idade superior a 60 anos.",
+    cardImg: age
   },
   {
-    title: "Medicamentos",
-    description: "Uso abusivo  de medicamentos que agridem os rins.",
-    img: medicines
+    cardTitle: "Medicamentos",
+    cardDescription: "Uso abusivo  de medicamentos que agridem os rins.",
+    cardImg: medicines
   },
 ];
 
 export const cardsList3 = [
   {
-    title: "",
-    description: "Pratique atividade física.",
-    img: exercise
+    cardTitle: "",
+    cardDescription: "Pratique atividade física.",
+    cardImg: exercise
   },
   {
-    title: "",
-    description: "Evite o consumo abusivo de gorduras.",
-    img: forbiddenFat
+    cardTitle: "",
+    cardDescription: "Evite o consumo abusivo de gorduras.",
+    cardImg: forbiddenFat
   },
   {
-    title: "",
-    description: "Controle o peso.",
-    img: scales
+    cardTitle: "",
+    cardDescription: "Controle o peso.",
+    cardImg: scales
   },
   {
-    title: "",
-    description: "Evite o uso de cigarro e bebidas alcoólicas.",
-    img: forbiddenAlcoholCigarettes
+    cardTitle: "",
+    cardDescription: "Evite o uso de cigarro e bebidas alcoólicas.",
+    cardImg: forbiddenAlcoholCigarettes
   },
   {
-    title: "",
-    description: "Controle a diabetes (açúcar no sangue).",
-    img: diabetes
+    cardTitle: "",
+    cardDescription: "Controle a diabetes (açúcar no sangue).",
+    cardImg: diabetes
   },
   {
-    title: "",
-    description: "Controle a hipertensão (pressão alta)",
-    img: hypertension
+    cardTitle: "",
+    cardDescription: "Controle a hipertensão (pressão alta)",
+    cardImg: hypertension
   }
 ];

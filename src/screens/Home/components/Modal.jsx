@@ -12,7 +12,7 @@ export default function Modal({ modalizeRef, title, subtitle, content }){
       <View style={styles.container}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
-        <Text>{content}</Text>
+        <Text style={styles.description}>{content}</Text>
         <TouchableOpacity style={styles.button} onPress={() => modalizeRef.current?.close()}>
           <Text style={styles.buttonText}>Fechar</Text>
         </TouchableOpacity>
@@ -29,12 +29,23 @@ const styles = StyleSheet.create({
   title: {
     textAlign: "center",
     marginVertical: 10,
-    fontSize: 17,
-    fontWeight: "700"
+    fontSize: 19,
+    fontFamily: 'Inter_600SemiBold',
+    color: '#121D29',
+    marginBottom: 22
   },
   subtitle: {
     marginVertical: 5,
-    fontWeight: "700"
+    fontSize: 19,
+    color: '#121D29',
+    fontFamily: 'Inter_600SemiBold',
+  },
+  description: {
+    fontSize: 16,
+    fontFamily: 'Inter_400Regular',
+    color: '#414A54',
+    textAlign: 'justify',
+    marginBottom: 15
   },
   button: {
     backgroundColor: mainColor,
@@ -46,6 +57,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
+    fontSize: 16,
+    fontFamily: 'Inter_600SemiBold'
   }
 });

@@ -1,5 +1,4 @@
-// REMOVER
-import { useRef } from 'react';
+ import { useRef, useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors'
 import { paddingContainer } from '../../../assets/constants/constants';
@@ -10,8 +9,17 @@ import MessageCard from './components/MenssageCard';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { cardsList } from '../Home/data/HypertensionCardsData'
+import Modal from './components/Modal';
 
 export default function Hypertension() {
+  const modalizeRef = useRef(null);
+  const [modalContent, setModalContent] = useState({ title: '', subtitle: '', content: '' });
+
+  const handleCardPress = (title, subtitle, content) => {
+    setModalContent({ title, subtitle, content });
+    modalizeRef.current?.open();
+  };
+
   return (
     <GestureHandlerRootView style={{ flex: 1}}>
       <ScrollView style={styles.container}>
@@ -29,13 +37,21 @@ export default function Hypertension() {
         </View>
         
         <Text style={[styles.text, {fontWeight: 'bold'}]}>Fatores de risco</Text>
-        <ScrollableCards cardsList={cardsList} />
+        <ScrollableCards cardsListData={cardsList} onCardPress={handleCardPress} />
 
         <Text style={[styles.text, {fontWeight: 'bold'}]}>Prevenção</Text>
         <Menu />
 
         <MessageCard message="A saúde é a riqueza mais valiosa, cuide dela como o seu maior tesouro." />
       </ScrollView>
+
+      <Modal
+        modalizeRef={modalizeRef}
+        title={modalContent.title}
+        subtitle={modalContent.subtitle}
+        content={modalContent.content}
+      />
+
     </GestureHandlerRootView>
   );
 };

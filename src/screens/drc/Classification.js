@@ -1,7 +1,7 @@
 import { ScrollView, Text, StyleSheet, SafeAreaView, View } from 'react-native';
-import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors'
+import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors';
 import { paddingContainer } from '../../../assets/constants/constants'
-import Content from '../../components/Content'
+import Content from '../../components/Content';
 import ClassificationCard from '../../components/ClassificationCards';
 import Button from '../../components/Button';
 

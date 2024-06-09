@@ -2,7 +2,7 @@ import DRC from './DRC';
 import Hypertension from './Hypertension';
 import { SafeAreaView, Text } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors'
+import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors';
 
 const Tab = createMaterialTopTabNavigator();
 

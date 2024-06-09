@@ -16,6 +16,7 @@ export const cardsList1 = ( navigation ) => [
     cardTitle: "Definição",
     cardDescription: "",
     cardImg: kidney,
+    onPress: () => navigation.navigate("Definition")
   },
   {
     cardTitle: "Classificação",

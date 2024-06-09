@@ -1,6 +1,6 @@
  import { useRef, useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native';
-import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors'
+import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors';
 import { paddingContainer } from '../../../assets/constants/constants';
 import { ScrollableCards } from './components/ScrollableCards';
 import heartIcon from '../../../assets/img/heatIcon.png'
@@ -40,7 +40,7 @@ export default function Hypertension() {
         <ScrollableCards cardsListData={cardsList} modalHandler={modalHandler} />
 
         <Text style={[styles.text, {fontWeight: 'bold'}]}>Prevenção</Text>
-        <Menu />
+        <Menu modalHandler={modalHandler} />
 
         <MessageCard message="A saúde é a riqueza mais valiosa, cuide dela como o seu maior tesouro." />
       </ScrollView>

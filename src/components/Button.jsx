@@ -1,5 +1,5 @@
-import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
-import { mainColor, secondColor, backgroundColor } from '../../assets/constants/colors'
+import { Text, StyleSheet, View, TouchableOpacity } from 'react-native';
+import { mainColor, secondColor, backgroundColor } from '../../assets/constants/colors';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Button() {

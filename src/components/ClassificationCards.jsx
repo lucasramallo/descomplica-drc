@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native';
 import safeIcon from '../../assets/img/classification-card/safe-icon.png';
 import safeIcon2 from '../../assets/img/classification-card/safe-icon2.png';
 import warningIcon from '../../assets/img/classification-card/warning-icon.png';

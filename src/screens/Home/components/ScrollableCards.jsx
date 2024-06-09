@@ -9,7 +9,7 @@ export function ScrollableCards({ cardsListData, modalHandler }) {
       return () => modalHandler(item.modalTitle, item.modalSubtitle, item.modalDescription)
     }
 
-    //se for para navegar para um tela, chama o onPress passado no Data
+    //se for para navegar para uma tela, chama o onPress passado no Data
     return item.onPress
   }
 

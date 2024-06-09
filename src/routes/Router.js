@@ -2,6 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home/Home';
 import Classification from '../screens/drc/Classification';
 import Definition from '../screens/drc/Definition';
+import Diagnosis from '../screens/drc/Diagnosis';
 
 const Stack = createStackNavigator();
 
@@ -11,6 +12,7 @@ export default function Router() {
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Classification" component={Classification} />
       <Stack.Screen name="Definition" component={Definition} />
+      <Stack.Screen name="Diagnosis" component={Diagnosis} />
     </Stack.Navigator>
   );
 }

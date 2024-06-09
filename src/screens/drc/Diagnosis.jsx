@@ -10,8 +10,8 @@ export default function Definition(){
       <View style={styles.content}>
         <Content
           title={"Doença Renal Crônica"}
-          subtitle={"Definição"}
-          content={"É caracterizada por anormalidades na estrutura e/ou função renal que permanecem por mais de três meses, com resultados negativos para a saúde do indivíduo. Por se tratar de uma doença que não tem sintomas, as manifestações dos sinais e sintomas ficam evidentes entre a fase de insuficiência renal moderada a severa, ou seja, quando os rins já apresentam perda funcional de forma significativa"} />
+          subtitle={"Diagnóstico"}
+          content={"O diagnóstico precoce da DRC pode ser realizado por meio de exames simples, como: urina do tipo I e creatinina sérica, a presença de proteína na urina tipo I e diminuição da taxa de filtração glomerular (TFG)."} />
         </View>
         <Button />
     </View>

@@ -28,7 +28,8 @@ export const cardsList1 = ( navigation ) => [
   {
     cardTitle: "Diagnóstico",
     cardDescription: "",
-    cardImg: diagnosis
+    cardImg: diagnosis,
+    onPress: () => navigation.navigate("Diagnosis")
   }
 ];
 

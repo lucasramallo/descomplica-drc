@@ -1,21 +1,18 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, FlatList, Text } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import { mainColor } from '../../../../assets/constants/colors';
 import Card from './Card';
 
 export function ScrollableCards({ cardsList }) {
   return (
-    <FlatList 
-      data={cardsList}
-      renderItem={({ item }) => <Card
+    <ScrollView horizontal={true}>
+      {cardsList.map(( item ) => <Card
         title={item.title} 
         description={item.description}
         img={item.img}
-        />}
-      keyExtractor={card => card.title} 
-      horizontal={true}
-      showsHorizontalScrollIndicator={false}
-      style={styles.scrollViewContent} />
+        key={item.title}
+        />)}
+    </ScrollView>
   );
 }
 

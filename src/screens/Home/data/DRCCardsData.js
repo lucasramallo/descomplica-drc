@@ -59,32 +59,32 @@ export const cardsList2 = [
 
 export const cardsList3 = [
   {
-    title: "",
+    title: "1",
     description: "Pratique atividade física.",
     img: exercise
   },
   {
-    title: "",
+    title: "2",
     description: "Evite o consumo abusivo de gorduras.",
     img: forbiddenFat
   },
   {
-    title: "",
+    title: "3",
     description: "Controle o peso.",
     img: scales
   },
   {
-    title: "",
+    title: "4",
     description: "Evite o uso de cigarro e bebidas alcoólicas.",
     img: forbiddenAlcoholCigarettes
   },
   {
-    title: "",
+    title: "5",
     description: "Controle a diabetes (açúcar no sangue).",
     img: diabetes
   },
   {
-    title: "",
+    title: "6",
     description: "Controle a hipertensão (pressão alta)",
     img: hypertension
   }

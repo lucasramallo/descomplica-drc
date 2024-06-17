@@ -1,6 +1,6 @@
 import { ScrollView, Text, StyleSheet } from 'react-native';
-import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors'
-import { paddingContainer } from '../../../assets/constants/constants'
+import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors';
+import { paddingContainer } from '../../../assets/constants/constants';
 import { ScrollableCards } from './components/ScrollableCards';
 import MessageCard from './components/MenssageCard';
 import { cardsList1, cardsList2, cardsList3 } from '../Home/data/DRCCardsData'

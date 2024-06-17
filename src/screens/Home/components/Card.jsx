@@ -1,5 +1,6 @@
 import { StyleSheet, TouchableOpacity, View, Text, Image } from 'react-native';
 import { mainColor } from '../../../../assets/constants/colors';
+import { useRef } from 'react';
 
 export default function Card({ index, title, description, img, onPress }) {
   return (
@@ -17,7 +18,7 @@ export default function Card({ index, title, description, img, onPress }) {
 
 const styles = StyleSheet.create({
   card: {
-    width: 310,
+    minWidth: 310,
     height: 150,
     marginEnd: 8,
     borderRadius: 18,
@@ -41,11 +42,13 @@ const styles = StyleSheet.create({
     fontSize: 26,
     color: '#fff',
     marginBottom: 5,
+    width: 190,
   },
   description: {
     fontFamily: 'Inter_400Regular',
     fontSize: 14,
     color: '#fff',
+    width: 190,
   },
   img: {
     width: 90,

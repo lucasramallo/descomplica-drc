@@ -8,7 +8,6 @@ import estresse from '../../../../assets/img/menu/estresse.png';
 import exercicio from '../../../../assets/img/menu/exercicio.png';
 import tabagismo from '../../../../assets/img/menu/tabagismo.png';
 
-
 export default function Menu({ modalHandler }) {
   const data = [
     { id: '1', image: controle, title: "Controle de peso", content: "A obesidade geral e a obesidade abdominal (gordura localizada na barriga) foram associadas ao aumento do risco de pressão arterial. A diminuição do peso promove a diminuição da  ressão, tanto em indivíduos com a pressão controlada, quanto em pressão descompensada. Ser “o mais magro possível” dentro da faixa da normalidade do IMC pode ser a melhor sugestão com relação à prevenção primária da pressão alta." },
@@ -26,27 +25,26 @@ export default function Menu({ modalHandler }) {
   );
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        numColumns={3}
-      />
+    <View style={styles.container}>      
+        {data.map( (item) => (
+          <Item item={item} key={item.id} />
+        ) )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
     backgroundColor: backgroundColor,
     marginRight: paddingContainer,
     justifyContent: 'center',
     alignItems: 'center',
+    flexWrap: 'wrap'   
   },
   card: {
-    width: 95,
-    height: 85,
+    width: 75,
+    height: 75,
     backgroundColor: '#fff',
     borderRadius: 14,
     margin: '3%',

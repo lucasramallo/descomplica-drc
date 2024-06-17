@@ -25,7 +25,11 @@ export default function Hypertension() {
       <ScrollView style={styles.container}>
         <Text style={styles.title}>Entenda sobre Hipertensão Arterial</Text>
         <View style={styles.cardView}>
-          <TouchableOpacity style={styles.card}>
+          <TouchableOpacity style={styles.card} onPress={() => modalHandler(
+            "HIPERTENSÃO ARTERIAL", 
+            "Definição", 
+            "É caracterizada por anormalidades na estrutura e/ou função renal que permanecem por mais de três meses, com resultados negativos para a saúde do indivíduo. Por se tratar de uma doença que não tem sintomas, as manifestações dos sinais e sintomas ficam evidentes entre a fase de insuficiência renal moderada a severa, ou seja, quando os rins já apresentam perda funcional de forma significativa"
+          )}>
             <View style={styles.content}>
               <Image style={styles.img} source={heartIcon} />
               <View style={styles.textContainer}>

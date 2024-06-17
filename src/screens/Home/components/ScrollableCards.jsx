@@ -16,7 +16,7 @@ export function ScrollableCards({ cardsListData, modalHandler }) {
 
   return (
     <ScrollView horizontal={true}>
-      {cardsList.map(( item ) => ( 
+      {cardsListData.map(( item ) => ( 
         <Card
           title={item.cardTitle} 
           description={item.cardDescription}

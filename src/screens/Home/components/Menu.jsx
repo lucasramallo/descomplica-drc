@@ -18,7 +18,7 @@ export default function Menu({ modalHandler }) {
     { id: '6', image: tabagismo, title: "Tabagismo", content: "O fumo é o único fator de risco totalmente evitável de doença e morte cardiovasculares, e seu enfrentamento precisa ser feito. Se você costuma fumar, evite. Não precisa para de vez, pare aos poucos. Procure ajuda de um profissional nesse momento. \n\nPara você que não fuma, é importante se proteger da exposição fumo passivo (respirar a fumaça do fumo)." },
   ];
 
-  const renderItem = ({ item }) => (
+  const Item = ({ item }) => (
     <TouchableOpacity style={styles.card} onPress={() => modalHandler("Hipertensão Arterial", item.title, item.content)}>
        <Image style={styles.img} source={item.image} />
     </TouchableOpacity>

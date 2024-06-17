@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, FlatList } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
+import { mainColor } from '../../../../assets/constants/colors';
 import Card from './Card';
 
 export function ScrollableCards({ cardsListData, modalHandler }) {
@@ -14,21 +15,16 @@ export function ScrollableCards({ cardsListData, modalHandler }) {
   }
 
   return (
-    <FlatList
-      data={cardsListData}
-      renderItem={({ item }) => (
+    <ScrollView horizontal={true}>
+      {cardsList.map(( item ) => ( 
         <Card
-          title={item.cardTitle}
+          title={item.cardTitle} 
           description={item.cardDescription}
           img={item.cardImg}
+          key={item.cardTitle}
           onPress={onPressHandler(item)}
-        />
-      )}
-      keyExtractor={card => card.description}
-      horizontal={true}
-      showsHorizontalScrollIndicator={false}
-      style={styles.scrollViewContent}
-    />
+        />)) }
+    </ScrollView>
   );
 }
 

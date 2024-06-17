@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, FlatList } from 'react-native';
-import { mainColor, secondColor, backgroundColor } from '../../../../assets/constants/colors'
+import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { backgroundColor } from '../../../../assets/constants/colors'
 import { paddingContainer } from '../../../../assets/constants/constants'
 import bebida from '../../../../assets/img/menu/bebida-alcoolica.png'
 import controle from '../../../../assets/img/menu/controle-de-peso.png'
@@ -19,34 +19,33 @@ export default function Menu() {
     { id: '6', image: tabagismo },
   ];
 
-  const renderItem = ({ item }) => (
+  const Item = ({ item }) => (
     <TouchableOpacity style={styles.card}>
        <Image style={styles.img} source={item.image} />
     </TouchableOpacity>
   );
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        numColumns={3}
-      />
+    <View style={styles.container}>      
+        {data.map( (item) => (
+          <Item item={item} key={item.id} />
+        ) )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
     backgroundColor: backgroundColor,
     marginRight: paddingContainer,
     justifyContent: 'center',
     alignItems: 'center',
+    flexWrap: 'wrap'   
   },
   card: {
-    width: 95,
-    height: 85,
+    width: 75,
+    height: 75,
     backgroundColor: '#fff',
     borderRadius: 14,
     margin: '3%',

@@ -3,27 +3,32 @@ import { StyleSheet, ScrollView } from 'react-native';
 import { mainColor } from '../../../../assets/constants/colors';
 import Card from './Card';
 
-export function ScrollableCards({ cardsList }) {
+export function ScrollableCards({ cardsListData, modalHandler }) {
+  function onPressHandler(item) {
+    if(modalHandler) {
+      //se for para abrir um modal, chama o modalHandler
+      return () => modalHandler(item.modalTitle, item.modalSubtitle, item.modalDescription)
+    }
+
+    //se for para navegar para uma tela, chama o onPress passado no Data
+    return item.onPress
+  }
+
   return (
     <ScrollView horizontal={true}>
-      {cardsList.map(( item ) => <Card
-        title={item.title} 
-        description={item.description}
-        img={item.img}
-        key={item.title}
-        />)}
+      {cardsListData.map(( item ) => ( 
+        <Card
+          title={item.cardTitle} 
+          description={item.cardDescription}
+          img={item.cardImg}
+          key={item.cardTitle}
+          onPress={onPressHandler(item)}
+        />)) }
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
-    width: 310,
-    height: 150,
-    marginEnd: 8,
-    borderRadius: 8,
-    backgroundColor: mainColor,
-  },
   scrollViewContent: {
     paddingEnd: 8,
   },

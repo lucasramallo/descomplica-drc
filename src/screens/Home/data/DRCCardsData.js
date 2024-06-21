@@ -37,27 +37,32 @@ export const cardsList2 = [
   {
     cardTitle: "Diabetes",
     cardDescription: "Pessoas com diabetes (quer seja do tipo 1 ou do tipo 2).",
-    cardImg: diabetes
+    cardImg: diabetes,
+    disable: true
   },
   {
     cardTitle: "Hipertensão",
     cardDescription: "Pessoas com hipertensão (pressão alta).",
-    cardImg: hypertension
+    cardImg: hypertension,
+    disable: true
   },
   {
     cardTitle: "Hereditariedade",
     cardDescription: "Pessoas com história familiar de doença renal crônica.",
-    cardImg: dna
+    cardImg: dna,
+    disable: true
   },
   {
     cardTitle: "Idade",
     cardDescription: "Pessoas com idade superior a 60 anos.",
-    cardImg: age
+    cardImg: age,
+    disable: true
   },
   {
     cardTitle: "Medicamentos",
     cardDescription: "Uso abusivo  de medicamentos que agridem os rins.",
-    cardImg: medicines
+    cardImg: medicines,
+    disable: true
   },
 ];
 
@@ -65,31 +70,37 @@ export const cardsList3 = [
   {
     cardTitle: "1",
     cardDescription: "Pratique atividade física.",
-    cardImg: exercise
+    cardImg: exercise,
+    disable: true
   },
   {
     cardTitle: "2",
     cardDescription: "Evite o consumo abusivo de gorduras.",
-    cardImg: forbiddenFat
+    cardImg: forbiddenFat,
+    disable: true
   },
   {
     cardTitle: "3",
     cardDescription: "Controle o peso.",
-    cardImg: scales
+    cardImg: scales,
+    disable: true
   },
   {
     cardTitle: "4",
     cardDescription: "Evite o uso de cigarro e bebidas alcoólicas.",
-    cardImg: forbiddenAlcoholCigarettes
+    cardImg: forbiddenAlcoholCigarettes,
+    disable: true
   },
   {
     cardTitle: "5",
     cardDescription: "Controle a diabetes (açúcar no sangue).",
-    cardImg: diabetes
+    cardImg: diabetes,
+    disable: true
   },
   {
     cardTitle: "6",
     cardDescription: "Controle a hipertensão (pressão alta)",
-    cardImg: hypertension
+    cardImg: hypertension,
+    disable: true
   }
 ];

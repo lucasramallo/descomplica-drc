@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { Modalize } from 'react-native-modalize';
 import { mainColor } from '../../../../assets/constants/colors';
 import { paddingContainer } from '../../../../assets/constants/constants';
@@ -11,8 +11,10 @@ export default function Modal({ modalizeRef, title, subtitle, content }){
     >
       <View style={styles.container}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subtitle}>{subtitle}</Text>
-        <Text style={styles.description}>{content}</Text>
+        <ScrollView style={styles.scrollContent}>
+          <Text style={styles.subtitle}>{subtitle}</Text>
+          <Text style={styles.description}>{content}</Text>
+        </ScrollView>
         <TouchableOpacity style={styles.button} onPress={() => modalizeRef.current?.close()}>
           <Text style={styles.buttonText}>Fechar</Text>
         </TouchableOpacity>
@@ -34,6 +36,9 @@ const styles = StyleSheet.create({
     color: '#121D29',
     marginBottom: 22
   },
+  scrollContent: {
+    maxHeight: '65%',
+  },
   subtitle: {
     marginVertical: 5,
     fontSize: 19,
@@ -45,7 +50,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter_400Regular',
     color: '#414A54',
     textAlign: 'justify',
-    marginBottom: 15
+    marginBottom: 5
   },
   button: {
     backgroundColor: mainColor,

@@ -13,10 +13,10 @@ import Modal from './components/Modal';
 
 export default function Hypertension() {
   const modalizeRef = useRef(null);
-  const [modalContent, setModalContent] = useState({ title: '', subtitle: '', content: '' });
+  const [modalContent, setModalContent] = useState({ title: '', subtitle: '', content: '', customContent: null });
 
-  const modalHandler = (title, subtitle, content) => {
-    setModalContent({ title, subtitle, content });
+  const modalHandler = (title, subtitle, content, customContent) => {
+    setModalContent({ title, subtitle, content,  customContent});
     modalizeRef.current?.open();
   };
 
@@ -54,6 +54,7 @@ export default function Hypertension() {
         title={modalContent.title}
         subtitle={modalContent.subtitle}
         content={modalContent.content}
+        customContent={modalContent.customContent}
       />
 
     </GestureHandlerRootView>

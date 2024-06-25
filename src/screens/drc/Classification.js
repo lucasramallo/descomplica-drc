@@ -14,13 +14,6 @@ export default function Classification() {
           subtitle={"Classificação"}
         />
 
-        <Text style={styles.frameTitle}>QUADRO 1 - Classificação da Doença Renal Crônica (DRC)</Text>
-        <View style={styles.frame}>
-          <Text style={{ textAlign: 'center', color: "#2A343F", fontFamily: "Inter_400Regular", fontSize: 13 }}>Estágios da{'\n'}DRC</Text>
-          <Text style={{ color: "#2A343F", fontFamily: "Inter_400Regular", fontSize: 15 }}>-</Text>
-          <Text style={{ textAlign: 'center', color: "#2A343F", fontFamily: "Inter_400Regular", fontSize: 13 }}>Taxa de Filtração{'\n'}Glomerular (mL/min/1,73²)</Text>
-        </View>
-
         <ClassificationCard />
 
         <Button />

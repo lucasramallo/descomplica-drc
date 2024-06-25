@@ -3,22 +3,36 @@ import { Modalize } from 'react-native-modalize';
 import { mainColor } from '../../../../assets/constants/colors';
 import { paddingContainer } from '../../../../assets/constants/constants';
 
-export default function Modal({ modalizeRef, title, subtitle, content }){
+export default function Modal({ modalizeRef, title, subtitle, content, customContent }){
   return (
     <Modalize 
       ref={modalizeRef}
       adjustToContentHeight={true}
     >
-      <View style={styles.container}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subtitle}>{subtitle}</Text>
-        <Text style={styles.description}>{content}</Text>
-        <TouchableOpacity style={styles.button} onPress={() => modalizeRef.current?.close()}>
-          <Text style={styles.buttonText}>Fechar</Text>
-        </TouchableOpacity>
-      </View>
+      {
+        customContent ? 
+        <View style={styles.container}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.subtitle}>{subtitle}</Text>
+          {customContent}
+          <TouchableOpacity style={styles.button} onPress={() => modalizeRef.current?.close()}>
+            <Text style={styles.buttonText}>Fechar</Text>
+          </TouchableOpacity>
+        </View>
+        
+        : 
+        
+        <View style={styles.container}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.subtitle}>{subtitle}</Text>
+          <Text style={styles.description}>{content}</Text>
+          <TouchableOpacity style={styles.button} onPress={() => modalizeRef.current?.close()}>
+            <Text style={styles.buttonText}>Fechar</Text>
+          </TouchableOpacity>
+        </View>
+      }
     </Modalize>
-    );
+  );
 }
 
 const styles = StyleSheet.create({

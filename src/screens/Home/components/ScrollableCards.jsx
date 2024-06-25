@@ -15,13 +15,14 @@ export function ScrollableCards({ cardsListData, modalHandler }) {
   }
 
   return (
-    <ScrollView horizontal={true}>
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
       {cardsListData.map(( item ) => ( 
         <Card
           title={item.cardTitle} 
           description={item.cardDescription}
           img={item.cardImg}
           key={item.cardTitle}
+          disable={item.disable}
           onPress={onPressHandler(item)}
         />)) }
     </ScrollView>

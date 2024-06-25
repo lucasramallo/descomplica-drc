@@ -1,10 +1,9 @@
 import { StyleSheet, TouchableOpacity, View, Text, Image } from 'react-native';
 import { mainColor } from '../../../../assets/constants/colors';
-import { useRef } from 'react';
 
-export default function Card({ index, title, description, img, onPress }) {
+export default function Card({ index, title, description, img, onPress, disable }) {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.card}>
+    <TouchableOpacity disabled={disable || false} onPress={onPress} style={styles.card}>
       <View style={styles.content}>
         <View style={styles.textContainer}>
           <Text style={styles.title}>{title}</Text>

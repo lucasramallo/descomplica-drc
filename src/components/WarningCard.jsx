@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     color: '#414B4B',
     fontFamily: 'Inter_400Regular',
     fontSize: 15,
+    marginBottom: 3,
     textAlign: 'justify'
   }
 })

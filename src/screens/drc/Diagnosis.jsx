@@ -13,14 +13,16 @@ export default function Definition(){
         <Content
           title={"Doença Renal Crônica"}
           subtitle={"Diagnóstico"}
-          content={"O diagnóstico precoce da DRC pode ser realizado por meio de exames simples, como: urina do tipo I e creatinina sérica, a presença de proteína na urina tipo I e diminuição da taxa de filtração glomerular (TFG)."} />
-          <Text></Text>
+          content={"O diagnóstico precoce da DRC pode ser realizado por meio de exames simples, como: urina do tipo I e creatinina sérica, a presença de proteína na urina tipo I e diminuição da taxa de filtração glomerular (TFG)."} 
+        />
+        <View style={styles.warningView}>
           <WarningCard 
             text="Procure um profissional de saúde para verificar a saúde dos seus rins!"
             borderColor="#43BC64"
             backgroundColor="#EAF7EE"
             logo={safeIcon}
           />
+        </View>
         </View>
         <Button />
     </View>
@@ -35,6 +37,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   content: {
-    marginTop: '15%'
+    marginTop: '15%',
   },
+  warningView: {
+    marginTop: 20
+  }
 });

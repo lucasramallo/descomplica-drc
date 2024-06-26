@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { Modalize } from 'react-native-modalize';
 import { mainColor } from '../../../../assets/constants/colors';
 import { paddingContainer } from '../../../../assets/constants/constants';
@@ -48,6 +48,9 @@ const styles = StyleSheet.create({
     color: '#121D29',
     marginBottom: 22
   },
+  scrollContent: {
+    maxHeight: '65%',
+  },
   subtitle: {
     marginVertical: 5,
     fontSize: 19,
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter_400Regular',
     color: '#414A54',
     textAlign: 'justify',
-    marginBottom: 15
+    marginBottom: 5
   },
   button: {
     backgroundColor: mainColor,

@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   content: {
     color: "#2A343F",
     fontFamily: "Inter_400Regular",
-    fontSize: 15,
+    fontSize: 17,
     textAlign: 'justify'
   },
 });

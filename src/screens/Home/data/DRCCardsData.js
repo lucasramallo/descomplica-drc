@@ -68,39 +68,39 @@ export const cardsList2 = [
 
 export const cardsList3 = [
   {
-    cardTitle: "1",
     cardDescription: "Pratique atividade física.",
     cardImg: exercise,
-    disable: true
+    disable: true,
+    reversed: true
   },
   {
-    cardTitle: "2",
     cardDescription: "Evite o consumo abusivo de gorduras.",
     cardImg: forbiddenFat,
-    disable: true
+    disable: true,
+    reversed: true
   },
   {
-    cardTitle: "3",
     cardDescription: "Controle o peso.",
     cardImg: scales,
-    disable: true
+    disable: true,
+    reversed: true
   },
   {
-    cardTitle: "4",
     cardDescription: "Evite o uso de cigarro e bebidas alcoólicas.",
     cardImg: forbiddenAlcoholCigarettes,
-    disable: true
+    disable: true,
+    reversed: true
   },
   {
-    cardTitle: "5",
     cardDescription: "Controle a diabetes (açúcar no sangue).",
     cardImg: diabetes,
-    disable: true
+    disable: true,
+    reversed: true
   },
   {
-    cardTitle: "6",
     cardDescription: "Controle a hipertensão (pressão alta)",
     cardImg: hypertension,
-    disable: true
+    disable: true,
+    reversed: true
   }
 ];

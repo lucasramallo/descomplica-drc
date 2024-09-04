@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     color: '#fff',
     marginBottom: 5,
-    width: 190,
+    width: 220,
   },
   description: {
     fontFamily: 'Inter_400Regular',

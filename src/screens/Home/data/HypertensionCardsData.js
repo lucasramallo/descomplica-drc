@@ -66,7 +66,7 @@ export const cardsList = [
     modalDescription: "Aquelas pessoas que ingerem seis ou mais doses ao dia de álcool têm mais risco de desenvolver pressão alta, o equivalente a 30g de álcool/dia = 1 garrafa de cerveja (5% de álcool, 600 ml); = 2 taças de vinho (12% de álcool, 250 ml); = 1 dose (42% de álcool, 60 ml) de destilados (uísque, vodca, aguardente). Esse limite deve ser reduzido à metade para homens de baixo peso e mulheres."
   },
   {
-    cardTitle: "Fatores socio-econômicos",
+    cardTitle: "Fatores socio- econômicos",
     cardDescription: "Entre os fatores, podemos...",
     cardImg: socioeconomicolImage,
     modalTitle: "Fatores de risco",

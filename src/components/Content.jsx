@@ -21,11 +21,12 @@ const styles = StyleSheet.create({
     color: "#121D29",
     fontFamily: "Inter_500Medium",
     fontSize: 20,
+    marginBottom: 5
   },
   content: {
     color: "#2A343F",
     fontFamily: "Inter_400Regular",
-    fontSize: 15,
+    fontSize: 17,
     textAlign: 'justify'
   },
 });

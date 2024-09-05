@@ -1,11 +1,10 @@
 import { StyleSheet, TouchableOpacity, View, Text, Image } from 'react-native';
 import { mainColor } from '../../../../assets/constants/colors';
-import { useRef } from 'react';
 
-export default function Card({ index, title, description, img, onPress }) {
+export default function Card({ index, title, description, img, onPress, disable, reversed }) {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.card}>
-      <View style={styles.content}>
+    <TouchableOpacity disabled={disable || false} onPress={onPress} style={styles.card} >
+      <View style={[styles.content, reversed && { flexDirection: 'row-reverse', gap: 10} ]}>
         <View style={styles.textContainer}>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.description}>{description}</Text>
@@ -42,7 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     color: '#fff',
     marginBottom: 5,
-    width: 190,
+    width: 220,
   },
   description: {
     fontFamily: 'Inter_400Regular',

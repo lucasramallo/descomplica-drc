@@ -6,6 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Question from './components/Question';
 import { useState } from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
+import AgeInput from './components/AgeInput';
 
 export default  function Questionnaire() {
   const [counter, setCounter] = useState(0);
@@ -28,6 +29,8 @@ export default  function Questionnaire() {
           subtitle={"Triagem para Doença Renal Oculta"} 
           content={"Verifique cada afirmativa que é verdadeira para você. Se uma afirmativa não é verdadeira ou você não tem certeza, responda não."}
         />
+
+        <AgeInput />
 
         <Question 
           title={"Qual seu sexo biológico?"} 

@@ -16,7 +16,6 @@ export default function Question({ title, value1, value2, incrementCounter, decr
     setFirstPress(false);
   }
   
-
   return (
     <View style={styles.container}>
       <Text style={styles.description}>{title}</Text>

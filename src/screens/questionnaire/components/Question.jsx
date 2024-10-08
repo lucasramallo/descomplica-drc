@@ -15,6 +15,7 @@ export default function Question({ title, value1, value2, incrementCounter, decr
 
     setFirstPress(false);
   }
+  
 
   return (
     <View style={styles.container}>
@@ -29,7 +30,9 @@ export default function Question({ title, value1, value2, incrementCounter, decr
           disabled={selected === "option1"}
           style={[styles.button, selected === "option1" && styles.selectedButton]}
         >
-          <Text style={[styles.buttonText, selected === "option1" && styles.SelectedButtonText]}>{value1}</Text>
+          <Text style={[styles.buttonText, selected === "option1" && styles.SelectedButtonText]}>
+            {value1}
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
@@ -40,7 +43,9 @@ export default function Question({ title, value1, value2, incrementCounter, decr
           disabled={selected === "option2"}
           style={[styles.button, selected === "option2" && styles.selectedButton]}
         >
-          <Text style={[styles.buttonText, selected === "option2" && styles.SelectedButtonText]}>{value2}</Text>
+          <Text style={[styles.buttonText, selected === "option2" && styles.SelectedButtonText]}>
+            {value2}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

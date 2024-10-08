@@ -1,8 +1,10 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { backgroundColor } from '../../../assets/constants/colors';
 import { paddingContainer } from '../../../assets/constants/constants';
 import Content from '../../components/Content';
 import Button from '../../components/Button';
+import WarningCard from '../../components/WarningCard';
+import safeIcon from '../../../assets/img/classification-card/safe-icon.png';
 
 export default function Definition(){
   return (
@@ -11,7 +13,16 @@ export default function Definition(){
         <Content
           title={"Doença Renal Crônica"}
           subtitle={"Diagnóstico"}
-          content={"O diagnóstico precoce da DRC pode ser realizado por meio de exames simples, como: urina do tipo I e creatinina sérica, a presença de proteína na urina tipo I e diminuição da taxa de filtração glomerular (TFG)."} />
+          content={"O diagnóstico precoce da DRC pode ser realizado por meio de exames simples, como: urina do tipo I e creatinina sérica, a presença de proteína na urina tipo I e diminuição da taxa de filtração glomerular (TFG)."} 
+        />
+        <View style={styles.warningView}>
+          <WarningCard 
+            text="Procure um profissional de saúde para verificar a saúde dos seus rins!"
+            borderColor="#43BC64"
+            backgroundColor="#EAF7EE"
+            logo={safeIcon}
+          />
+        </View>
         </View>
         <Button />
     </View>
@@ -26,6 +37,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   content: {
-    marginTop: '15%'
+    marginTop: '15%',
   },
+  warningView: {
+    marginTop: 20
+  }
 });

@@ -13,10 +13,10 @@ import Modal from './components/Modal';
 
 export default function Hypertension() {
   const modalizeRef = useRef(null);
-  const [modalContent, setModalContent] = useState({ title: '', subtitle: '', content: '' });
+  const [modalContent, setModalContent] = useState({ title: '', subtitle: '', content: '', customContent: null });
 
-  const modalHandler = (title, subtitle, content) => {
-    setModalContent({ title, subtitle, content });
+  const modalHandler = (title, subtitle, content, customContent) => {
+    setModalContent({ title, subtitle, content,  customContent});
     modalizeRef.current?.open();
   };
 
@@ -28,7 +28,7 @@ export default function Hypertension() {
           <TouchableOpacity style={styles.card} onPress={() => modalHandler(
             "HIPERTENSÃO ARTERIAL", 
             "Definição", 
-            "É caracterizada por anormalidades na estrutura e/ou função renal que permanecem por mais de três meses, com resultados negativos para a saúde do indivíduo. Por se tratar de uma doença que não tem sintomas, as manifestações dos sinais e sintomas ficam evidentes entre a fase de insuficiência renal moderada a severa, ou seja, quando os rins já apresentam perda funcional de forma significativa"
+            "É considerada uma doença crônica, não transmissível caracterizada pela elevação persistente a pressão arterial (PA) a níveis maior ou igual a 140/90 mmHg. A medida deve ser realizada de acordo com a técnica correta, em pelo menos, duas ocasiões diferentes e na ausência de medicação anti-hipertensiva."
           )}>
             <View style={styles.content}>
               <Image style={styles.img} source={heartIcon} />
@@ -54,6 +54,7 @@ export default function Hypertension() {
         title={modalContent.title}
         subtitle={modalContent.subtitle}
         content={modalContent.content}
+        customContent={modalContent.customContent}
       />
 
     </GestureHandlerRootView>

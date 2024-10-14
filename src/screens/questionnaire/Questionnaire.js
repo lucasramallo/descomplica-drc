@@ -1,14 +1,13 @@
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
 import Content from '../../components/Content'
-import { backgroundColor } from '../../../assets/constants/colors';
+import { mainColor, backgroundColor } from '../../../assets/constants/colors';
 import { paddingContainer } from '../../../assets/constants/constants'
-import { SafeAreaView } from 'react-native-safe-area-context';
 import Question from './components/Question';
 import { useState } from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
 import AgeInput from './components/AgeInput';
 
-export default  function Questionnaire() {
+export default  function Questionnaire({ navigation }) {
   const [counter, setCounter] = useState(0);
 
   const incrementCounter = () => {
@@ -111,6 +110,19 @@ export default  function Questionnaire() {
           incrementCounter={incrementCounter}
           decrementCounter={decrementCounter}
         />
+
+        <View style={styles.BottomButtons}>
+          <TouchableOpacity style={styles.backButton}>
+            <Text style={styles.backButtonText}>{"❮  Voltar"}</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+            onPress={() => navigation.navigate("QustionnaireResult", {score: counter})}
+            style={styles.continueButton}
+          >
+            <Text style={styles.buttonText}>{"Continuar  ❯"}</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   )
@@ -125,5 +137,35 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: '18%',
     marginBottom: '10%'
+  },
+  BottomButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 30
+  },
+  continueButton: {
+    width: 150,
+    height: 50,
+    backgroundColor: mainColor,
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  backButton: {
+    width: 100,
+    height: 50,
+    backgroundColor: backgroundColor,
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  buttonText: {
+    fontFamily: "Inter_500Medium",
+    color: '#fff',
+    fontSize: 15
+  },
+  backButtonText: {
+    fontFamily: "Inter_500Medium",
+    color: '#121212',
   }
 })

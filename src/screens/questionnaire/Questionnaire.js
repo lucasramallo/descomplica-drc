@@ -10,6 +10,14 @@ import AgeInput from './components/AgeInput';
 export default  function Questionnaire({ navigation }) {
   const [counter, setCounter] = useState(0);
 
+  const ageIncrementCounter = (value) => {
+    setCounter(prvCounter => prvCounter += value);
+  }
+
+  const ageDecrementCounter = (value) => {
+    setCounter(prvCounter => prvCounter -= value);
+  }
+
   const incrementCounter = () => {
     setCounter(prvCounter => prvCounter += 1);
   }
@@ -29,12 +37,12 @@ export default  function Questionnaire({ navigation }) {
           content={"Verifique cada afirmativa que é verdadeira para você. Se uma afirmativa não é verdadeira ou você não tem certeza, responda não."}
         />
 
-        <AgeInput />
+        <AgeInput incrementCounter={ageIncrementCounter} decrementCounter={ageDecrementCounter}/>
 
         <Question 
           title={"Qual seu sexo biológico?"} 
-          value1={"Masculino"} 
-          value2={"Feminino"} 
+          value1={"Feminino"} 
+          value2={"Masculino"} 
           incrementCounter={incrementCounter}
           decrementCounter={decrementCounter}
         />
@@ -49,24 +57,8 @@ export default  function Questionnaire({ navigation }) {
 
         <Question 
           title={"Algum profissional de saúde já disse que você tem pressão alta?"} 
-          value1={"Masculino"} 
-          value2={"Feminino"} 
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
-        />
-
-        <Question 
-          title={"Algum profissional de saúde já disse que você tem diabetes (açúcar alto no sangue)?"} 
           value1={"Sim"} 
           value2={"Não"} 
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
-        />
-
-        <Question 
-          title={"Algum profissional de saúde já disse que você tem pressão alta?"} 
-          value1={"Masculino"} 
-          value2={"Feminino"} 
           incrementCounter={incrementCounter}
           decrementCounter={decrementCounter}
         />
@@ -81,8 +73,8 @@ export default  function Questionnaire({ navigation }) {
 
         <Question 
           title={"Você já teve um ataque cardíaco (infarto) ou derrame/AVC/AVE?"} 
-          value1={"Masculino"} 
-          value2={"Feminino"} 
+          value1={"Sim"} 
+          value2={"Não"} 
           incrementCounter={incrementCounter}
           decrementCounter={decrementCounter}
         />
@@ -97,8 +89,8 @@ export default  function Questionnaire({ navigation }) {
 
         <Question 
           title={"Você tem problema de circulação/doença circulatória em suas pernas?"} 
-          value1={"Masculino"} 
-          value2={"Feminino"} 
+          value1={"Sim"} 
+          value2={"Não"} 
           incrementCounter={incrementCounter}
           decrementCounter={decrementCounter}
         />
@@ -112,8 +104,11 @@ export default  function Questionnaire({ navigation }) {
         />
 
         <View style={styles.BottomButtons}>
-          <TouchableOpacity style={styles.backButton}>
-            <Text style={styles.backButtonText}>{"❮  Voltar"}</Text>
+          <TouchableOpacity 
+            onPress={() => navigation.navigate("Home")}
+            style={styles.backButton}
+          >
+            <Text style={styles.backButtonText}>{"Pular  ❯"}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity 

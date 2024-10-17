@@ -10,7 +10,7 @@ export default function Question({ title, value1, value2, incrementCounter, decr
 
   const decrementCounterHandler = () => {
     if(!firstPress) {
-      decrementCounter();
+      decrementCounter(1);
     }
 
     setFirstPress(false);
@@ -23,7 +23,7 @@ export default function Question({ title, value1, value2, incrementCounter, decr
         <TouchableOpacity 
           onPress={() => {
             setSelected("option1"); 
-            incrementCounter();
+            incrementCounter(1);
             setFirstPress(false)
           }}
           disabled={selected === "option1"}

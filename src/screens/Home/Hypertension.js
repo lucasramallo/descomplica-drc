@@ -1,13 +1,12 @@
  import { useRef, useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native';
-import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors';
+import { mainColor, backgroundColor } from '../../../assets/constants/colors';
 import { paddingContainer } from '../../../assets/constants/constants';
 import { ScrollableCards } from './components/ScrollableCards';
 import heartIcon from '../../../assets/img/heatIcon.png'
 import Menu from './components/Menu';
 import MessageCard from './components/MenssageCard';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-
 import { cardsList } from '../Home/data/HypertensionCardsData'
 import Modal from './components/Modal';
 

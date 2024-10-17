@@ -3,8 +3,18 @@ import Content from "../../components/Content";
 import FeedbackDots from "./components/FeedbackDots";
 import { paddingContainer } from "../../../assets/constants/constants";
 import Button from "../../components/Button";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Classification({ navigation, route }) {
+  const closeQuestionnaireHander = async () => {
+    try {
+      await AsyncStorage.setItem('userHasCompletedQuestionnaire', JSON.stringify(true));
+    } catch (error) {
+      console.error("Erro ao salvar o dado:", error);
+    }
+    navigation.navigate("Home");
+  };
+
   return (
     <ScrollView contentContainerStyle={{ flex: 1, justifyContent: "space-between" }} style={styles.container}>
       <View>
@@ -55,7 +65,7 @@ export default function Classification({ navigation, route }) {
         )}
       </View>
 
-      <Button />
+      <Button onPress={closeQuestionnaireHander}/>
     </ScrollView>
   );
 }

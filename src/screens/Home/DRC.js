@@ -1,10 +1,13 @@
-import { ScrollView, Text, StyleSheet } from 'react-native';
+import { ScrollView, Text, StyleSheet, View } from 'react-native';
 import { mainColor, secondColor, backgroundColor } from '../../../assets/constants/colors';
 import { paddingContainer } from '../../../assets/constants/constants';
 import { ScrollableCards } from './components/ScrollableCards';
 import MessageCard from './components/MenssageCard';
 import { cardsList1, cardsList2, cardsList3 } from '../Home/data/DRCCardsData'
 import { useNavigation } from '@react-navigation/native';
+import QuestionnaireButton from '../../components/QuestionnaireButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function DRC() {
   const navigation = useNavigation();
@@ -19,6 +22,15 @@ export default function DRC() {
       <ScrollableCards cardsListData={cardsList3} />
 
       <MessageCard message="A saúde é a riqueza mais valiosa, cuide dela como o seu maior tesouro." />
+
+      <View style={{paddingRight: paddingContainer}}>
+        <QuestionnaireButton onPress={() => navigation.navigate("Questionnaire")}/>
+      </View>
+ 
+      {/* { remover depois - botão tmporário para testes} */}
+      <TouchableOpacity onPress={() => AsyncStorage.setItem('userHasCompletedQuestionnaire', JSON.stringify(false))}>
+          <Text>Reset userHasCompletedQuestionnaire to false</Text>
+        </TouchableOpacity>
     </ScrollView>
   );
 };

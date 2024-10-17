@@ -1,13 +1,10 @@
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { mainColor } from '../../assets/constants/colors';
-import { useNavigation } from '@react-navigation/native';
 
-export default function Button({ onPress }) {
-  const navigation = useNavigation();
-
+export default function QuestionnaireButton({ onPress }) {
   return (
-    <TouchableOpacity onPress={onPress ? onPress : () => navigation.navigate("Home")} style={styles.container}>
-      <Text style={styles.text}>Sair</Text>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
+      <Text style={styles.text}>Refazer Questionário</Text>
     </TouchableOpacity>
   )
 }
@@ -21,7 +18,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20,
-    marginTop: 20
+    marginTop: 20,
   },
   text: {
     fontFamily: "Inter_600SemiBold",

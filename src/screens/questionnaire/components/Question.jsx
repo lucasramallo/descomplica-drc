@@ -1,70 +1,103 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import { mainColor } from '../../../../assets/constants/colors';
-import { useState } from 'react';
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { mainColor } from "../../../../assets/constants/colors";
+import { useState, useEffect } from "react";
 
-export default function Question({ title, value1, value2, incrementScore, decrementScore }) {
+export default function Question({
+  title,
+  value1,
+  value2,
+  incrementScore,
+  decrementScore,
+  setNumberOfAlternativesAnswered,
+}) {
   const [selected, setSelected] = useState("");
   const [firstPress, setFirstPress] = useState(true);
+  const [answered, setAnswered] = useState(false);
 
   const decrementScoreHandler = () => {
-    if(!firstPress) {
+    if (!firstPress) {
       decrementScore();
     }
 
     setFirstPress(false);
-  }
-  
+  };
+
+  const handleNumberOfAlternativesAnswered = () => {
+    if (answered === false) {
+      setNumberOfAlternativesAnswered((number) => (number += 1));
+      setAnswered(true);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.description}>{title}</Text>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity 
+        <TouchableOpacity
           onPress={() => {
-            setSelected("option1"); 
+            setSelected("option1");
             incrementScore(1);
-            setFirstPress(false)
+            setFirstPress(false);
+            handleNumberOfAlternativesAnswered();
           }}
           disabled={selected === "option1"}
-          style={[styles.button, selected === "option1" && styles.selectedButton]}
+          style={[
+            styles.button,
+            selected === "option1" && styles.selectedButton,
+          ]}
         >
-          <Text style={[styles.buttonText, selected === "option1" && styles.SelectedButtonText]}>
+          <Text
+            style={[
+              styles.buttonText,
+              selected === "option1" && styles.SelectedButtonText,
+            ]}
+          >
             {value1}
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
+        <TouchableOpacity
           onPress={() => {
-            setSelected("option2"); 
-            decrementScoreHandler()
-          }} 
+            setSelected("option2");
+            decrementScoreHandler();
+            handleNumberOfAlternativesAnswered();
+          }}
           disabled={selected === "option2"}
-          style={[styles.button, selected === "option2" && styles.selectedButton]}
+          style={[
+            styles.button,
+            selected === "option2" && styles.selectedButton,
+          ]}
         >
-          <Text style={[styles.buttonText, selected === "option2" && styles.SelectedButtonText]}>
+          <Text
+            style={[
+              styles.buttonText,
+              selected === "option2" && styles.SelectedButtonText,
+            ]}
+          >
             {value2}
           </Text>
         </TouchableOpacity>
       </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30
+    marginTop: 30,
   },
   description: {
     color: "#2A343F",
     fontFamily: "Inter_400Regular",
     fontSize: 17,
-    textAlign: 'justify'
+    textAlign: "justify",
   },
   buttonContainer: {
     marginTop: 10,
-    flexDirection: 'row',
-    gap: 20
+    flexDirection: "row",
+    gap: 20,
   },
   button: {
     width: 110,
@@ -72,8 +105,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: mainColor,
     borderRadius: 12,
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: "center",
+    justifyContent: "center",
   },
   selectedButton: {
     width: 110,
@@ -81,16 +114,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: mainColor,
     borderRadius: 12,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: mainColor,
   },
   buttonText: {
     fontFamily: "Inter_500Medium",
-    color: mainColor
+    color: mainColor,
   },
   SelectedButtonText: {
     fontFamily: "Inter_500Medium",
-    color: '#fff',
-  }
-})
+    color: "#fff",
+  },
+});

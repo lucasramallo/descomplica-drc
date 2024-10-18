@@ -6,32 +6,48 @@ import { useState } from "react";
 export default function AgeInput({
   incrementScore,
   decrementScore,
-  setNumberOfAlternativesAnswered,
+  incrementAnswersCounter,
+  decrementAnsersCounter
 }) {
   const [age, setAge] = useState();
+  const [lastAge, setLastAge] = useState(null);
+  const MIN_AGE = 0;
   const [lastValueIncremented, setLastValueIncremented] = useState(0);
+  const [firstEdit, setFirstEdit] = useState(true);
 
   const handleEndEditing = () => {
     const ageInt = parseInt(age);
-    setNumberOfAlternativesAnswered((number) => (number += 1));
+    decrementScore(lastValueIncremented);
+
+    if(firstEdit && age > MIN_AGE || lastAge <= MIN_AGE && age > MIN_AGE){
+      incrementAnswersCounter();
+    }
+    
+    if(!firstEdit && age <= MIN_AGE && lastAge > MIN_AGE){
+      decrementAnsersCounter();
+    }
+
+    if(ageInt < 50){
+      setLastValueIncremented(0);
+    }
 
     if (ageInt >= 50 && ageInt < 60) {
-      decrementScore(lastValueIncremented);
       incrementScore(2);
       setLastValueIncremented(2);
     }
 
     if (ageInt >= 60 && ageInt < 70) {
-      decrementScore(lastValueIncremented);
       incrementScore(3);
       setLastValueIncremented(3);
     }
 
     if (ageInt >= 70) {
-      decrementScore(lastValueIncremented);
       incrementScore(4);
       setLastValueIncremented(4);
     }
+
+    setLastAge(ageInt);
+    setFirstEdit(false);
   };
 
   return (

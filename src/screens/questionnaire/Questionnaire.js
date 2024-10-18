@@ -29,6 +29,14 @@ export default function Questionnaire({ navigation }) {
     setScore((previousScore) => (previousScore -= 1));
   };
 
+  const incrementAnswersCounter = () => {
+    setNumberOfAlternativesAnswered(previousNumberOfAlernativesAnswered => previousNumberOfAlernativesAnswered += 1);
+  }
+
+  const decrementAnsersCounter = () => {
+    setNumberOfAlternativesAnswered(previousNumberOfAlernativesAnswered => previousNumberOfAlernativesAnswered -= 1);
+  }
+
   console.log(score); // APAGAR
   console.log("number: " + numberOfAlternativesAnswered);
 
@@ -46,7 +54,8 @@ export default function Questionnaire({ navigation }) {
         <AgeInput
           incrementScore={ageIncrementScore}
           decrementScore={ageDecrementScore}
-          setNumberOfAlternativesAnswered={setNumberOfAlternativesAnswered}
+          incrementAnswersCounter={incrementAnswersCounter}
+          decrementAnsersCounter={decrementAnsersCounter}
         />
 
         <Question
@@ -55,7 +64,7 @@ export default function Questionnaire({ navigation }) {
           value2={"Masculino"}
           incrementScore={incrementScore}
           decrementScore={decrementScore}
-          setNumberOfAlternativesAnswered={setNumberOfAlternativesAnswered}
+          incrementAnswersCounter={incrementAnswersCounter}
         />
 
         <Question
@@ -66,7 +75,7 @@ export default function Questionnaire({ navigation }) {
           value2={"Não"}
           incrementScore={incrementScore}
           decrementScore={decrementScore}
-          setNumberOfAlternativesAnswered={setNumberOfAlternativesAnswered}
+          incrementAnswersCounter={incrementAnswersCounter}
         />
 
         <Question
@@ -77,7 +86,7 @@ export default function Questionnaire({ navigation }) {
           value2={"Não"}
           incrementScore={incrementScore}
           decrementScore={decrementScore}
-          setNumberOfAlternativesAnswered={setNumberOfAlternativesAnswered}
+          incrementAnswersCounter={incrementAnswersCounter}
         />
 
         <Question
@@ -88,7 +97,7 @@ export default function Questionnaire({ navigation }) {
           value2={"Não"}
           incrementScore={incrementScore}
           decrementScore={decrementScore}
-          setNumberOfAlternativesAnswered={setNumberOfAlternativesAnswered}
+          incrementAnswersCounter={incrementAnswersCounter}
         />
 
         <Question
@@ -99,7 +108,7 @@ export default function Questionnaire({ navigation }) {
           value2={"Não"}
           incrementScore={incrementScore}
           decrementScore={decrementScore}
-          setNumberOfAlternativesAnswered={setNumberOfAlternativesAnswered}
+          incrementAnswersCounter={incrementAnswersCounter}
         />
 
         <Question
@@ -110,7 +119,7 @@ export default function Questionnaire({ navigation }) {
           value2={"Não"}
           incrementScore={incrementScore}
           decrementScore={decrementScore}
-          setNumberOfAlternativesAnswered={setNumberOfAlternativesAnswered}
+          incrementAnswersCounter={incrementAnswersCounter}
         />
 
         <Question
@@ -121,7 +130,7 @@ export default function Questionnaire({ navigation }) {
           value2={"Não"}
           incrementScore={incrementScore}
           decrementScore={decrementScore}
-          setNumberOfAlternativesAnswered={setNumberOfAlternativesAnswered}
+          incrementAnswersCounter={incrementAnswersCounter}
         />
 
         <Question
@@ -132,7 +141,7 @@ export default function Questionnaire({ navigation }) {
           value2={"Não"}
           incrementScore={incrementScore}
           decrementScore={decrementScore}
-          setNumberOfAlternativesAnswered={setNumberOfAlternativesAnswered}
+          incrementAnswersCounter={incrementAnswersCounter}
         />
 
         <View style={styles.BottomButtons}>

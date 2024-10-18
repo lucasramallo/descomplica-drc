@@ -10,25 +10,28 @@ export default function Question({
   value2,
   incrementScore,
   decrementScore,
-  setNumberOfAlternativesAnswered,
+  incrementAnswersCounter,
 }) {
   const [selected, setSelected] = useState("");
   const [firstPress, setFirstPress] = useState(true);
-  const [answered, setAnswered] = useState(false);
+
+  const incrementScoreHandler = () => {
+    if(firstPress){
+      incrementAnswersCounter();
+    }
+
+    incrementScore();
+    setFirstPress(false);
+  }
 
   const decrementScoreHandler = () => {
-    if (!firstPress) {
+    if(firstPress) {
+      incrementAnswersCounter();
+    } else {
       decrementScore();
     }
 
     setFirstPress(false);
-  };
-
-  const handleNumberOfAlternativesAnswered = () => {
-    if (answered === false) {
-      setNumberOfAlternativesAnswered((number) => (number += 1));
-      setAnswered(true);
-    }
   };
 
   return (
@@ -38,9 +41,7 @@ export default function Question({
         <TouchableOpacity
           onPress={() => {
             setSelected("option1");
-            incrementScore(1);
-            setFirstPress(false);
-            handleNumberOfAlternativesAnswered();
+            incrementScoreHandler();
           }}
           disabled={selected === "option1"}
           style={[
@@ -62,7 +63,6 @@ export default function Question({
           onPress={() => {
             setSelected("option2");
             decrementScoreHandler();
-            handleNumberOfAlternativesAnswered();
           }}
           disabled={selected === "option2"}
           style={[

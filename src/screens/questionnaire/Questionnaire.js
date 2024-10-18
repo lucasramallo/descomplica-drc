@@ -8,25 +8,25 @@ import { ScrollView } from 'react-native-gesture-handler';
 import AgeInput from './components/AgeInput';
 
 export default  function Questionnaire({ navigation }) {
-  const [counter, setCounter] = useState(0);
+  const [score, setScore] = useState(0);
 
-  const ageIncrementCounter = (value) => {
-    setCounter(prvCounter => prvCounter += value);
+  const ageIncrementScore = (value) => {
+    setScore(previousScore => previousScore += value);
   }
 
-  const ageDecrementCounter = (value) => {
-    setCounter(prvCounter => prvCounter -= value);
+  const ageDecrementScore = (value) => {
+    setScore(previousScore => previousScore -= value);
   }
 
-  const incrementCounter = () => {
-    setCounter(prvCounter => prvCounter += 1);
+  const incrementScore = () => {
+    setScore(previousScore => previousScore += 1);
   }
 
-  const decrementCounter = () => {
-    setCounter(prvCounter => prvCounter -= 1);
+  const decrementScore = () => {
+    setScore(previousScore => previousScore -= 1);
   }
 
-  console.log(counter)
+  console.log(score) // APAGAR
 
   return (
     <ScrollView style={styles.container}>
@@ -37,70 +37,70 @@ export default  function Questionnaire({ navigation }) {
           content={"Verifique cada afirmativa que é verdadeira para você. Se uma afirmativa não é verdadeira ou você não tem certeza, responda não."}
         />
 
-        <AgeInput incrementCounter={ageIncrementCounter} decrementCounter={ageDecrementCounter}/>
+        <AgeInput incrementScore={ageIncrementScore} decrementScore={ageDecrementScore}/>
 
         <Question 
           title={"Qual seu sexo biológico?"} 
           value1={"Feminino"} 
           value2={"Masculino"} 
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
+          incrementScore={incrementScore}
+          decrementScore={decrementScore}
         />
 
         <Question 
           title={"Algum profissional de saúde já disse que você tem ou teve anemia?"} 
           value1={"Sim"} 
           value2={"Não"} 
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
+          incrementScore={incrementScore}
+          decrementScore={decrementScore}
         />
 
         <Question 
           title={"Algum profissional de saúde já disse que você tem pressão alta?"} 
           value1={"Sim"} 
           value2={"Não"} 
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
+          incrementScore={incrementScore}
+          decrementScore={decrementScore}
         />
 
         <Question 
           title={"Algum profissional de saúde já disse que você tem diabetes (açúcar alto no sangue)?"} 
           value1={"Sim"} 
           value2={"Não"} 
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
+          incrementScore={incrementScore}
+          decrementScore={decrementScore}
         />
 
         <Question 
           title={"Você já teve um ataque cardíaco (infarto) ou derrame/AVC/AVE?"} 
           value1={"Sim"} 
           value2={"Não"} 
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
+          incrementScore={incrementScore}
+          decrementScore={decrementScore}
         />
 
         <Question 
           title={"Você já teve insuficiência cardíaca congestiva ou insuficiência cardíaca?"} 
           value1={"Sim"} 
           value2={"Não"} 
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
+          incrementScore={incrementScore}
+          decrementScore={decrementScore}
         />
 
         <Question 
           title={"Você tem problema de circulação/doença circulatória em suas pernas?"} 
           value1={"Sim"} 
           value2={"Não"} 
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
+          incrementScore={incrementScore}
+          decrementScore={decrementScore}
         />
 
         <Question 
           title={"Algum exame médico mostrou que você tem perda de proteína na urina?"} 
           value1={"Sim"} 
           value2={"Não"} 
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
+          incrementScore={incrementScore}
+          decrementScore={decrementScore}
         />
 
         <View style={styles.BottomButtons}>
@@ -112,7 +112,7 @@ export default  function Questionnaire({ navigation }) {
           </TouchableOpacity>
 
           <TouchableOpacity 
-            onPress={() => navigation.navigate("QustionnaireResult", {score: counter})}
+            onPress={() => navigation.navigate("QustionnaireResult", { score })}
             style={styles.continueButton}
           >
             <Text style={styles.buttonText}>{"Continuar  ❯"}</Text>

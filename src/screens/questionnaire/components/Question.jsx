@@ -4,13 +4,13 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { mainColor } from '../../../../assets/constants/colors';
 import { useState } from 'react';
 
-export default function Question({ title, value1, value2, incrementCounter, decrementCounter }) {
+export default function Question({ title, value1, value2, incrementScore, decrementScore }) {
   const [selected, setSelected] = useState("");
   const [firstPress, setFirstPress] = useState(true);
 
-  const decrementCounterHandler = () => {
+  const decrementScoreHandler = () => {
     if(!firstPress) {
-      decrementCounter(1);
+      decrementScore();
     }
 
     setFirstPress(false);
@@ -23,7 +23,7 @@ export default function Question({ title, value1, value2, incrementCounter, decr
         <TouchableOpacity 
           onPress={() => {
             setSelected("option1"); 
-            incrementCounter(1);
+            incrementScore(1);
             setFirstPress(false)
           }}
           disabled={selected === "option1"}
@@ -37,7 +37,7 @@ export default function Question({ title, value1, value2, incrementCounter, decr
         <TouchableOpacity 
           onPress={() => {
             setSelected("option2"); 
-            decrementCounterHandler()
+            decrementScoreHandler()
           }} 
           disabled={selected === "option2"}
           style={[styles.button, selected === "option2" && styles.selectedButton]}

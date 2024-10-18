@@ -3,7 +3,7 @@ import React from 'react'
 import { TextInput } from 'react-native-gesture-handler'
 import { useState } from 'react';
 
-export default function AgeInput({incrementCounter, decrementCounter}) {
+export default function AgeInput({incrementScore, decrementScore}) {
   const [age, setAge] = useState();
   const [lastValueIncremented, setLastValueIncremented] = useState(0);
 
@@ -11,20 +11,20 @@ export default function AgeInput({incrementCounter, decrementCounter}) {
     const ageInt = parseInt(age);
 
     if (ageInt >= 50 && ageInt < 60) {
-      decrementCounter(lastValueIncremented);
-      incrementCounter(2);
+      decrementScore(lastValueIncremented);
+      incrementScore(2);
       setLastValueIncremented(2)
     }
 
     if (ageInt >= 60 && ageInt < 70) {
-      decrementCounter(lastValueIncremented);
-      incrementCounter(3);
+      decrementScore(lastValueIncremented);
+      incrementScore(3);
       setLastValueIncremented(3)
     }
 
     if (ageInt >= 70) {
-      decrementCounter(lastValueIncremented);
-      incrementCounter(4);
+      decrementScore(lastValueIncremented);
+      incrementScore(4);
       setLastValueIncremented(4)
     }
   };

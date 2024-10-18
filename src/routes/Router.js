@@ -17,7 +17,7 @@ export default function Router() {
   const checkUserHasCompletedQuestionnaire = async () => {
     try {
       const value = await AsyncStorage.getItem('userHasCompletedQuestionnaire');
-      console.log("value: " + value)
+      console.log("value: " + value);
       return value === "true";
     } catch (error) {
       console.error('Erro ao recuperar a configuração:', error);

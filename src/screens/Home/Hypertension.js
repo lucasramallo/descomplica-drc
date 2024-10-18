@@ -8,7 +8,7 @@ import Menu from './components/Menu';
 import MessageCard from './components/MenssageCard';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { cardsList } from '../Home/data/HypertensionCardsData'
-import Modal from './components/Modal';
+import Modal from '../../components/Modal';
 
 export default function Hypertension() {
   const modalizeRef = useRef(null);

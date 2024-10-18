@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { Modalize } from 'react-native-modalize';
-import { mainColor } from '../../../../assets/constants/colors';
-import { paddingContainer } from '../../../../assets/constants/constants';
+import { mainColor } from '../../assets/constants/colors';
+import { paddingContainer } from '../../assets/constants/constants';
 
 export default function Modal({ modalizeRef, title, subtitle, content, customContent }){
   return (

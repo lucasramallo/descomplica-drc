@@ -20,7 +20,7 @@ export default function Hypertension() {
   };
 
   return (
-    <GestureHandlerRootView style={{ flex: 1}}>
+    <GestureHandlerRootView style={{ flex: 1 }}>
       <ScrollView style={styles.container}>
         <Text style={styles.title}>Entenda sobre Hipertensão Arterial</Text>
         <View style={styles.cardView}>

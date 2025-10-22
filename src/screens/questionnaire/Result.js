@@ -4,6 +4,7 @@ import FeedbackDots from "./components/FeedbackDots";
 import { paddingContainer } from "../../../assets/constants/constants";
 import Button from "../../components/Button";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { backgroundColor } from "../../../assets/constants/colors";
 
 export default function Classification({ navigation, route }) {
   const closeQuestionnaireHander = async () => {
@@ -73,6 +74,7 @@ export default function Classification({ navigation, route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: backgroundColor,
     paddingHorizontal: paddingContainer,
     paddingTop: "15%"
   },

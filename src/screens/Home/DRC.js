@@ -26,11 +26,6 @@ export default function DRC() {
       <View style={{paddingRight: paddingContainer}}>
         <QuestionnaireButton onPress={() => navigation.navigate("Questionnaire")}/>
       </View>
- 
-      {/* { remover depois - botão tmporário para testes} */}
-      <TouchableOpacity onPress={() => AsyncStorage.setItem('userHasCompletedQuestionnaire', JSON.stringify(false))}>
-          <Text>Reset userHasCompletedQuestionnaire to false</Text>
-        </TouchableOpacity>
     </ScrollView>
   );
 };

@@ -19,6 +19,7 @@ export default function Home() {
             fontSize: 16,
             fontFamily: "Inter_700Bold",
             paddingVertical: 5,
+            color: 'black'
           },
           tabBarIndicatorStyle: {
             backgroundColor: backgroundColor,

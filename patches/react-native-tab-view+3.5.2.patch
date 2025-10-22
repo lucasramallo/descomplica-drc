@@ -1,0 +1,151 @@
+diff --git a/node_modules/react-native-tab-view/src/TabBar.tsx b/node_modules/react-native-tab-view/src/TabBar.tsx
+index e8d0b4c..1baeb73 100644
+--- a/node_modules/react-native-tab-view/src/TabBar.tsx
++++ b/node_modules/react-native-tab-view/src/TabBar.tsx
+@@ -78,7 +78,6 @@ const Separator = ({ width }: { width: number }) => {
+ 
+ const getFlattenedTabWidth = (style: StyleProp<ViewStyle>) => {
+   const tabStyle = StyleSheet.flatten(style);
+-
+   return tabStyle?.width;
+ };
+ 
+@@ -133,7 +132,7 @@ const getTabBarWidth = <T extends Route>({
+   scrollEnabled,
+   flattenedTabWidth,
+   tabWidths,
+-}: Pick<Props<T>, 'navigationState' | 'gap' | 'layout' | 'scrollEnabled'> & {
++}: Pick<Props<T>, 'navigationState' | 'gap' | 'scrollEnabled'> & {
+   tabWidths: Record<string, number>;
+   flattenedTabWidth: FlattenedTabWidth;
+ }) => {
+@@ -180,8 +179,6 @@ const normalizeScrollValue = <T extends Route>({
+   const scrollValue = Math.max(Math.min(value, maxDistance), 0);
+ 
+   if (Platform.OS === 'android' && I18nManager.isRTL) {
+-    // On Android, scroll value is not applied in reverse in RTL
+-    // so we need to manually adjust it to apply correct value
+     return maxDistance - scrollValue;
+   }
+ 
+@@ -211,8 +208,6 @@ const getScrollAmount = <T extends Route>({
+       flattenedTabWidth
+     );
+ 
+-    // To get the current index centered we adjust scroll amount by width of indexes
+-    // 0 through (i - 1) and add half the width of current index i
+     return (
+       total +
+       (navigationState.index === i
+@@ -252,8 +247,6 @@ const renderIndicatorDefault = (props: IndicatorProps<Route>) => (
+ 
+ const getTestIdDefault = ({ route }: Scene<Route>) => route.testID;
+ 
+-// How many items measurements should we update per batch.
+-// Defaults to 10, since that's whats FlatList is using in initialNumToRender.
+ const MEASURE_PER_BATCH = 10;
+ 
+ export function TabBar<T extends Route>({
+@@ -364,8 +357,7 @@ export function TabBar<T extends Route>({
+ 
+   const renderItem = React.useCallback(
+     ({ item: route, index }: ListRenderItemInfo<T>) => {
+-      const props: TabBarItemProps<T> & { key: string } = {
+-        key: route.key,
++      const props: TabBarItemProps<T> = {
+         position: position,
+         route: route,
+         navigationState: navigationState,
+@@ -384,9 +376,6 @@ export function TabBar<T extends Route>({
+           ? (e: LayoutChangeEvent) => {
+               measuredTabWidths.current[route.key] = e.nativeEvent.layout.width;
+ 
+-              // When we have measured widths for all of the tabs, we should updates the state
+-              // We avoid doing separate setState for each layout since it triggers multiple renders and slows down app
+-              // If we have more than 10 routes divide updating tabWidths into multiple batches. Here we update only first batch of 10 items.
+               if (
+                 routes.length > MEASURE_PER_BATCH &&
+                 index === MEASURE_PER_BATCH &&
+@@ -402,8 +391,6 @@ export function TabBar<T extends Route>({
+                   (r) => typeof measuredTabWidths.current[r.key] === 'number'
+                 )
+               ) {
+-                // When we have measured widths for all of the tabs, we should updates the state
+-                // We avoid doing separate setState for each layout since it triggers multiple renders and slows down app
+                 setTabWidths({ ...measuredTabWidths.current });
+               }
+             }
+@@ -428,7 +415,6 @@ export function TabBar<T extends Route>({
+         onLongPress: () => onTabLongPress?.({ route }),
+         labelStyle: labelStyle,
+         style: tabStyle,
+-        // Calculate the deafult width for tab for FlatList to work
+         defaultTabWidth: !isWidthDynamic
+           ? getComputedTabWidth(
+               index,
+@@ -446,9 +432,9 @@ export function TabBar<T extends Route>({
+         <>
+           {gap > 0 && index > 0 ? <Separator width={gap} /> : null}
+           {renderTabBarItem ? (
+-            renderTabBarItem(props)
++            renderTabBarItem({ ...props, key: route.key })
+           ) : (
+-            <TabBarItem {...props} />
++            <TabBarItem key={route.key} {...props} />
+           )}
+         </>
+       );
+@@ -525,7 +511,6 @@ export function TabBar<T extends Route>({
+       if (routes.length <= MEASURE_PER_BATCH) {
+         return;
+       }
+-      // Get next vievable item
+       const item = changed[changed.length - 1];
+       const index = item?.index || 0;
+       if (
+diff --git a/node_modules/react-native-tab-view/src/TabBarItem.tsx b/node_modules/react-native-tab-view/src/TabBarItem.tsx
+index c1c0d77..1b04d0b 100644
+--- a/node_modules/react-native-tab-view/src/TabBarItem.tsx
++++ b/node_modules/react-native-tab-view/src/TabBarItem.tsx
+@@ -10,7 +10,6 @@ import {
+   ViewStyle,
+ } from 'react-native';
+ import useLatestCallback from 'use-latest-callback';
+-
+ import { PlatformPressable } from './PlatformPressable';
+ import { TabBarItemLabel } from './TabBarItemLabel';
+ import type { NavigationState, Route, Scene } from './types';
+@@ -57,7 +56,6 @@ const getActiveOpacity = (
+ ) => {
+   if (routesLength > 1) {
+     const inputRange = Array.from({ length: routesLength }, (_, i) => i);
+-
+     return position.interpolate({
+       inputRange,
+       outputRange: inputRange.map((i) => (i === tabIndex ? 1 : 0)),
+@@ -74,7 +72,6 @@ const getInactiveOpacity = (
+ ) => {
+   if (routesLength > 1) {
+     const inputRange = Array.from({ length: routesLength }, (_, i) => i);
+-
+     return position.interpolate({
+       inputRange,
+       outputRange: inputRange.map((i: number) => (i === tabIndex ? 0 : 1)),
+@@ -234,7 +231,6 @@ const TabBarItemInternal = <T extends Route>({
+       accessibilityLabel={accessibilityLabel}
+       accessibilityRole="tab"
+       accessibilityState={{ selected: isFocused }}
+-      // @ts-ignore: this is to support older React Native versions
+       accessibilityStates={isFocused ? ['selected'] : []}
+       pressColor={pressColor}
+       pressOpacity={pressOpacity}
+@@ -318,8 +314,6 @@ const styles = StyleSheet.create({
+     right: 0,
+   },
+   pressable: {
+-    // The label is not pressable on Windows
+-    // Adding backgroundColor: 'transparent' seems to fix it
+     backgroundColor: 'transparent',
+   },
+ });
+\ No newline at end of file
